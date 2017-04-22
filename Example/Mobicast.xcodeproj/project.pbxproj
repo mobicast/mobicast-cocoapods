@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		203BFE2F19367DA87CE4CC3F /* Pods_Mobicast_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39AC5E76AA59FBEA9682533 /* Pods_Mobicast_Example.framework */; };
+		238DBBA01EAB6A4100C1DAED /* Pods_Mobicast_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238DBB9F1EAB6A4100C1DAED /* Pods_Mobicast_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		746D8B8B522ABCFF09E57C46 /* Pods_Mobicast_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31B14BF55D0537D9061CA8F /* Pods_Mobicast_Tests.framework */; };
+		951EB2BC17D30A19525DBC05 /* Pods_Mobicast_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC442E70B21576E48E469B4B /* Pods_Mobicast_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		089505545974234C6E040B20 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		0D5E49EB8398382BCD971057 /* Mobicast.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Mobicast.podspec; path = ../Mobicast.podspec; sourceTree = "<group>"; };
+		089505545974234C6E040B20 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0D5E49EB8398382BCD971057 /* Mobicast.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Mobicast.podspec; path = ../Mobicast.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		238DBB9F1EAB6A4100C1DAED /* Pods_Mobicast_Example.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Mobicast_Example.framework; path = "Pods/../build/Debug-iphoneos/Pods_Mobicast_Example.framework"; sourceTree = "<group>"; };
 		59C6655C07B74A3827FF8C89 /* Pods-Mobicast_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobicast_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobicast_Tests/Pods-Mobicast_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Mobicast_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobicast_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,11 +43,11 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		99458EBAA08C0140F3FAC097 /* Pods-Mobicast_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobicast_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobicast_Example/Pods-Mobicast_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A39AC5E76AA59FBEA9682533 /* Pods_Mobicast_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobicast_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF912268782C3F413D3184C0 /* Pods-Mobicast_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobicast_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobicast_Tests/Pods-Mobicast_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C31B14BF55D0537D9061CA8F /* Pods_Mobicast_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobicast_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF090B707A1750F1897F5008 /* Pods-Mobicast_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobicast_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobicast_Example/Pods-Mobicast_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EB8AB868DD4C4C6A9180FEDA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EB8AB868DD4C4C6A9180FEDA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F3B66323576138BC8291FD28 /* Pods_Mobicast_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobicast_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC442E70B21576E48E469B4B /* Pods_Mobicast_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobicast_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				203BFE2F19367DA87CE4CC3F /* Pods_Mobicast_Example.framework in Frameworks */,
+				238DBBA01EAB6A4100C1DAED /* Pods_Mobicast_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746D8B8B522ABCFF09E57C46 /* Pods_Mobicast_Tests.framework in Frameworks */,
+				951EB2BC17D30A19525DBC05 /* Pods_Mobicast_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +73,9 @@
 		1B9911524AA95C7AA020B916 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A39AC5E76AA59FBEA9682533 /* Pods_Mobicast_Example.framework */,
-				C31B14BF55D0537D9061CA8F /* Pods_Mobicast_Tests.framework */,
+				238DBB9F1EAB6A4100C1DAED /* Pods_Mobicast_Example.framework */,
+				F3B66323576138BC8291FD28 /* Pods_Mobicast_Example.framework */,
+				FC442E70B21576E48E469B4B /* Pods_Mobicast_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7848B7AEEF1CFCB6F028464F /* [CP] Check Pods Manifest.lock */ = {
@@ -291,7 +293,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9862DC3875695C574DF3D12C /* [CP] Copy Pods Resources */ = {
@@ -496,6 +498,10 @@
 			baseConfigurationReference = CF090B707A1750F1897F5008 /* Pods-Mobicast_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Mobicast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -510,6 +516,10 @@
 			baseConfigurationReference = 99458EBAA08C0140F3FAC097 /* Pods-Mobicast_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Mobicast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
 s.version          = '0.1.0'
-s.summary          = 'A short description of Mobicast.'
+s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,13 +28,13 @@ DESC
 s.homepage         = 'https://mobicast.tv/'
 # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
-s.author           = { 'Mobicast' }
+s.author           = 'Mobicast'
 s.source           = { :git => 'https://github.com/mobicast/mobicast-cocoapods.git', :tag => s.version.to_s }
 # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
 s.ios.deployment_target = '8.0'
 
-s.source_files = 'Mobicast/Mobicast.framework'
+s.vendored_frameworks = 'Mobicast/Framework/Mobicast.framework'
 
 # s.resource_bundles = {
 #   'Mobicast' => ['Mobicast/Assets/*.png']
