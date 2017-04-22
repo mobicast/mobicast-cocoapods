@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Mobicast_Example' do
+  pod 'Mobicast', :path => '../'
+
+  target 'Mobicast_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

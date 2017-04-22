@@ -1,0 +1,6 @@
+framework module Mobicast {
+  umbrella header "Mobicast-umbrella.h"
+
+  export *
+  module * { export * }
+}

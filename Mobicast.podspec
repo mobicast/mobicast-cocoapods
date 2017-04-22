@@ -1,0 +1,47 @@
+#
+# Be sure to run `pod lib lint Mobicast.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#
+
+Pod::Spec.new do |s|
+s.name             = 'Mobicast'
+s.version          = '0.1.0'
+s.summary          = 'A short description of Mobicast.'
+
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
+
+s.description      = <<-DESC
+
+import Mobicast
+
+Discovery.init(viewController: self)
+
+DESC
+
+s.homepage         = 'https://mobicast.tv/'
+# s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'Mobicast' }
+s.source           = { :git => 'https://github.com/mobicast/mobicast-cocoapods.git', :tag => s.version.to_s }
+# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+
+s.ios.deployment_target = '8.0'
+
+s.source_files = 'Mobicast/Mobicast.framework'
+
+# s.resource_bundles = {
+#   'Mobicast' => ['Mobicast/Assets/*.png']
+# }
+
+# s.public_header_files = 'Pod/Classes/**/*.h'
+s.frameworks = 'UIKit', 'AVFoundation'
+s.dependency 'GoogleAds-IMA-iOS-SDK', '~> 3.4'
+s.dependency 'google-cast-sdk', '>=3.2.0'
+end

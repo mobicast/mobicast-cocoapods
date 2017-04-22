@@ -1,0 +1,16 @@
+PODS:
+  - Mobicast (0.1.0)
+
+DEPENDENCIES:
+  - Mobicast (from `../`)
+
+EXTERNAL SOURCES:
+  Mobicast:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Mobicast: 6cb05b743827e2ea48dedddb3f89bc83c2118fa0
+
+PODFILE CHECKSUM: a0c43cf6984fc5ac7158281925d47c4131c18144
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,22 @@
+{
+  "name": "Mobicast",
+  "version": "0.1.0",
+  "summary": "A short description of Mobicast.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://mobicast.tv/",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mobicast": "info@mobicast.tv"
+  },
+  "source": {
+    "git": "https://github.com/mobicast/mobicast-cocoapods.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Mobicast/Classes/**/*"
+}
