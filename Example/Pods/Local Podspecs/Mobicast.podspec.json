@@ -1,0 +1,32 @@
+{
+  "name": "Mobicast",
+  "version": "0.1.0",
+  "summary": "Mobicast video player.",
+  "description": "import Mobicast\n\nDiscovery.init(viewController: self)",
+  "homepage": "https://mobicast.tv/",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": "Mobicast",
+  "source": {
+    "git": "https://github.com/mobicast/mobicast-cocoapods.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "vendored_frameworks": "Mobicast/Framework/Mobicast.framework",
+  "frameworks": [
+    "UIKit",
+    "AVFoundation"
+  ],
+  "dependencies": {
+    "GoogleAds-IMA-iOS-SDK": [
+      "~> 3.4"
+    ],
+    "google-cast-sdk": [
+      ">=3.2.0"
+    ]
+  }
+}
