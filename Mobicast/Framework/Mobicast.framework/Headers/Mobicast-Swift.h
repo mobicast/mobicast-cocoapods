@@ -142,9 +142,11 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 SWIFT_CLASS("_TtC8Mobicast9Discovery")
 @interface Discovery : NSObject
+/// Devoloper mode status. False by defalult.
+@property (nonatomic) BOOL developerMode;
 /// Init a new preview video list with a parent view controller.
 /// @param viewController View controller where the preview video list will be displayed.
-- (nonnull instancetype)initWithViewController:(UIViewController * _Nonnull)viewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithViewController:(UIViewController * _Nonnull)viewController playerToken:(NSString * _Nonnull)playerToken OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
