@@ -2,9 +2,9 @@
 
 ### Requirements
 
-XCode 6 or newer
-iOS 8.0+
-CocoaPods
+XCode 6 or newer  
+iOS 8.0+  
+CocoaPods  
 
 ### Installation Instructions
 
