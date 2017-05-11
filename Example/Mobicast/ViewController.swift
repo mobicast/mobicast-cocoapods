@@ -9,7 +9,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        discovery = Discovery.init(viewController: self)
+        discovery = Discovery.init(viewController: self, playerToken: "102")
     }
 
     override func didReceiveMemoryWarning() {

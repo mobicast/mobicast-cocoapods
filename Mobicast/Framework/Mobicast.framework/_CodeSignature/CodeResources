@@ -4,13 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		YHDeDDfkfWt9/81kUAySJDv1oqM=
-		</data>
 		<key>Headers/Mobicast-Swift.h</key>
 		<data>
-		bJa2UBAg4B/jc+NO2w7gHJX7mkk=
+		jSBjxX7KXj1rDLQx7Qf46dL0FU4=
 		</data>
 		<key>Images.bundle/Root.plist</key>
 		<data>
@@ -103,27 +99,39 @@
 		</data>
 		<key>Images.bundle/pauseButton.png</key>
 		<data>
-		Q3jF47k24PLLLorQOYmgfvA0HyY=
+		hSzA9MANVihC8Pny008GiiplcsE=
 		</data>
 		<key>Images.bundle/pauseButton@2x.png</key>
 		<data>
-		HH2qX7oS00o/D3Z1I6PWbtHVj7w=
+		5LuecZmV3XbVIk+dM7lqT2RIp9U=
 		</data>
 		<key>Images.bundle/pauseButton@3x.png</key>
 		<data>
-		0upnQZVIbj8Cv4FcjM1sIPp19pg=
+		rkbfbD2VaumCS6MO/YKkgXvQsTI=
 		</data>
 		<key>Images.bundle/playButton.png</key>
 		<data>
-		TqeTQWPUrS+CJ+BB7akXzrcLcuY=
+		tGKFQBHAyNpQ65DGjm+DKHrrPYw=
 		</data>
 		<key>Images.bundle/playButton@2x.png</key>
 		<data>
-		prMGODYHHanDn897f7WLRhjVj28=
+		4KznK9omfxvXhax3dtGz7PciT5Q=
 		</data>
 		<key>Images.bundle/playButton@3x.png</key>
 		<data>
-		uO+RT5kC/UG7Pv59xN8oAVMqfaE=
+		Yu2ljdCjWtaWlRQ2JZUu8f2XtDU=
+		</data>
+		<key>Images.bundle/playButtonShape.png</key>
+		<data>
+		OW1iSGXEFZ1RHAaAh+Dlk9HdUKc=
+		</data>
+		<key>Images.bundle/playButtonShape@2x.png</key>
+		<data>
+		qTehBGsAXHGs3gew6iAZyivKJr0=
+		</data>
+		<key>Images.bundle/playButtonShape@3x.png</key>
+		<data>
+		d0cZmLLxumy3ohJppGHZOuC/KSE=
 		</data>
 		<key>Images.bundle/playSmailIcon.png</key>
 		<data>
@@ -159,15 +167,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fGYdLMPFZnf+mKmylLEalmNActs=
+		BgXvpBdrMkKzSoeX+iwjRjVsCic=
 		</data>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		DxtAHA5qbs95wUBut2W+9QOdqw4=
+		do8Fwx4x7uSGo2/gHKExTuC+28k=
 		</data>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		ZoZml/ns/xBm8ReDGHvvXuefE08=
+		16pDFBTLvMLhs2JS/PQNu8BV93M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -180,11 +188,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bJa2UBAg4B/jc+NO2w7gHJX7mkk=
+			jSBjxX7KXj1rDLQx7Qf46dL0FU4=
 			</data>
 			<key>hash2</key>
 			<data>
-			RzKUDKTqUauWBjKLljisQT+SY5PPRzzA9Arzq2PxhqE=
+			CWU0OX/UGVLvEJxVr9ZUAAw+1ztnYBpawZxqXTI5Qjs=
 			</data>
 		</dict>
 		<key>Images.bundle/Root.plist</key>
@@ -424,66 +432,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Q3jF47k24PLLLorQOYmgfvA0HyY=
+			hSzA9MANVihC8Pny008GiiplcsE=
 			</data>
 			<key>hash2</key>
 			<data>
-			6YdrYftvvsJv+3y1KPhni/pYzJkbExGNmPvHPwkoyMc=
+			RSYG09cVfkfzMppArk9bSAuVUZjbkTHTUTkbTwARKPQ=
 			</data>
 		</dict>
 		<key>Images.bundle/pauseButton@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HH2qX7oS00o/D3Z1I6PWbtHVj7w=
+			5LuecZmV3XbVIk+dM7lqT2RIp9U=
 			</data>
 			<key>hash2</key>
 			<data>
-			FvFBis14UL1b8ss3X5femCcWAngYEY7sJbWjsJhIMvQ=
+			gcjvuKy2JjRLK/NtpyhTIpPX20itWDU40VON13y4M9s=
 			</data>
 		</dict>
 		<key>Images.bundle/pauseButton@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0upnQZVIbj8Cv4FcjM1sIPp19pg=
+			rkbfbD2VaumCS6MO/YKkgXvQsTI=
 			</data>
 			<key>hash2</key>
 			<data>
-			NvtVfP64aHWBYP2ZuOX/+9xVZ46KdeBiqKchnHCEDtM=
+			KdzBujlevMGu6fPZIg1dO/qtGnLUOn/Fbw8buTHVcFQ=
 			</data>
 		</dict>
 		<key>Images.bundle/playButton.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TqeTQWPUrS+CJ+BB7akXzrcLcuY=
+			tGKFQBHAyNpQ65DGjm+DKHrrPYw=
 			</data>
 			<key>hash2</key>
 			<data>
-			drrc9um7JiC9Lrir6nG6OTBgkn6QKkQ3MJ616h53eO4=
+			83OplusPB5ny3E+LBt58BlpiljKar1pn2dAh0ZhwBPY=
 			</data>
 		</dict>
 		<key>Images.bundle/playButton@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			prMGODYHHanDn897f7WLRhjVj28=
+			4KznK9omfxvXhax3dtGz7PciT5Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			O26PfKfSWvZrz4daieVtLyo7KwxXfTOQxLsQuRudoow=
+			n/GQzgHx0H3imd9ca28BIhFJtFLS8KODcas/yNkZ7xM=
 			</data>
 		</dict>
 		<key>Images.bundle/playButton@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uO+RT5kC/UG7Pv59xN8oAVMqfaE=
+			Yu2ljdCjWtaWlRQ2JZUu8f2XtDU=
 			</data>
 			<key>hash2</key>
 			<data>
-			lQCFR7KmXL4hEfvMnVd2XOmwpTwO2fAyHfqgZYVUTx4=
+			D57+ajZ4d8B2LPYdheZedKLxMvpkM5/Msq7f3iIDJng=
+			</data>
+		</dict>
+		<key>Images.bundle/playButtonShape.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OW1iSGXEFZ1RHAaAh+Dlk9HdUKc=
+			</data>
+			<key>hash2</key>
+			<data>
+			Il+vn2UWWRvCD3Cw1oG3nK+HDOyTUnNjVybEYkt6Mkg=
+			</data>
+		</dict>
+		<key>Images.bundle/playButtonShape@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qTehBGsAXHGs3gew6iAZyivKJr0=
+			</data>
+			<key>hash2</key>
+			<data>
+			WkoZrMkaMJaAyll/vjS5T2WcTch2W2U94Fw018uRP1k=
+			</data>
+		</dict>
+		<key>Images.bundle/playButtonShape@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			d0cZmLLxumy3ohJppGHZOuC/KSE=
+			</data>
+			<key>hash2</key>
+			<data>
+			hQP6bVHY3kaikB0Tfntx48r3ADDOyZyeJ2o24wIFKio=
 			</data>
 		</dict>
 		<key>Images.bundle/playSmailIcon.png</key>
@@ -578,22 +619,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DxtAHA5qbs95wUBut2W+9QOdqw4=
+			do8Fwx4x7uSGo2/gHKExTuC+28k=
 			</data>
 			<key>hash2</key>
 			<data>
-			zhLlFw/M15qQ3jMdyG2RsDAtoPUT/v7fD1lU3HpEbhc=
+			NUT/SRXkrSUgyJ4BDbnSzYtq6l+gSQqWmwzEG1vRAS8=
 			</data>
 		</dict>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZoZml/ns/xBm8ReDGHvvXuefE08=
+			16pDFBTLvMLhs2JS/PQNu8BV93M=
 			</data>
 			<key>hash2</key>
 			<data>
-			XKKDBt557SRSdOIgwoUIY50X7IbglqZidE02SHvIJ6w=
+			qppx5WEpKfQZm9OzRMPRcCO4Y49PBAcGqor4A7UlxuM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
