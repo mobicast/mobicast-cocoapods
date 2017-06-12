@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		238DBBA01EAB6A4100C1DAED /* Pods_Mobicast_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238DBB9F1EAB6A4100C1DAED /* Pods_Mobicast_Example.framework */; };
+		239D229A1EEEDD2200D8BF3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239D22991EEEDD2200D8BF3E /* Assets.xcassets */; };
+		239D229E1EEEDD6200D8BF3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239D229B1EEEDD6200D8BF3E /* LaunchScreen.storyboard */; };
+		239D229F1EEEDD6200D8BF3E /* BootPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239D229C1EEEDD6200D8BF3E /* BootPage.storyboard */; };
+		239D22A01EEEDD6200D8BF3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239D229D1EEEDD6200D8BF3E /* Main.storyboard */; };
+		239D22A41EEEDD7F00D8BF3E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D22A31EEEDD7F00D8BF3E /* UIViewControllerExtension.swift */; };
+		239D22A81EEEDD8900D8BF3E /* BootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D22A51EEEDD8900D8BF3E /* BootPageViewController.swift */; };
+		239D22A91EEEDD8900D8BF3E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D22A61EEEDD8900D8BF3E /* ListViewController.swift */; };
+		239D22AA1EEEDD8900D8BF3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D22A71EEEDD8900D8BF3E /* ViewController.swift */; };
+		5794A577771F9142C348EA20 /* Pods_Mobicast_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B66323576138BC8291FD28 /* Pods_Mobicast_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		951EB2BC17D30A19525DBC05 /* Pods_Mobicast_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC442E70B21576E48E469B4B /* Pods_Mobicast_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -31,14 +36,18 @@
 		089505545974234C6E040B20 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		0D5E49EB8398382BCD971057 /* Mobicast.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Mobicast.podspec; path = ../Mobicast.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		238DBB9F1EAB6A4100C1DAED /* Pods_Mobicast_Example.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Mobicast_Example.framework; path = "Pods/../build/Debug-iphoneos/Pods_Mobicast_Example.framework"; sourceTree = "<group>"; };
+		239D22991EEEDD2200D8BF3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		239D229B1EEEDD6200D8BF3E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		239D229C1EEEDD6200D8BF3E /* BootPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BootPage.storyboard; sourceTree = "<group>"; };
+		239D229D1EEEDD6200D8BF3E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		239D22A31EEEDD7F00D8BF3E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		239D22A51EEEDD8900D8BF3E /* BootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootPageViewController.swift; sourceTree = "<group>"; };
+		239D22A61EEEDD8900D8BF3E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		239D22A71EEEDD8900D8BF3E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59C6655C07B74A3827FF8C89 /* Pods-Mobicast_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobicast_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobicast_Tests/Pods-Mobicast_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Mobicast_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobicast_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Mobicast_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mobicast_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				238DBBA01EAB6A4100C1DAED /* Pods_Mobicast_Example.framework in Frameworks */,
+				5794A577771F9142C348EA20 /* Pods_Mobicast_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,43 @@
 				FC442E70B21576E48E469B4B /* Pods_Mobicast_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		239D22961EEEDCDC00D8BF3E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				239D22A21EEEDD7900D8BF3E /* Expansion */,
+				239D22A51EEEDD8900D8BF3E /* BootPageViewController.swift */,
+				239D22A61EEEDD8900D8BF3E /* ListViewController.swift */,
+				239D22A71EEEDD8900D8BF3E /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		239D22971EEEDCE500D8BF3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				239D229B1EEEDD6200D8BF3E /* LaunchScreen.storyboard */,
+				239D229C1EEEDD6200D8BF3E /* BootPage.storyboard */,
+				239D229D1EEEDD6200D8BF3E /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		239D22981EEEDCEC00D8BF3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				239D22991EEEDD2200D8BF3E /* Assets.xcassets */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		239D22A21EEEDD7900D8BF3E /* Expansion */ = {
+			isa = PBXGroup;
+			children = (
+				239D22A31EEEDD7F00D8BF3E /* UIViewControllerExtension.swift */,
+			);
+			name = Expansion;
 			sourceTree = "<group>";
 		};
 		4CF22F9B9B90264D62F732BE /* Pods */ = {
@@ -116,10 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				239D22981EEEDCEC00D8BF3E /* Models */,
+				239D22971EEEDCE500D8BF3E /* Views */,
+				239D22961EEEDCDC00D8BF3E /* Controllers */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for Mobicast";
@@ -250,9 +296,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				239D229A1EEEDD2200D8BF3E /* Assets.xcassets in Resources */,
+				239D229F1EEEDD6200D8BF3E /* BootPage.storyboard in Resources */,
+				239D229E1EEEDD6200D8BF3E /* LaunchScreen.storyboard in Resources */,
+				239D22A01EEEDD6200D8BF3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7848B7AEEF1CFCB6F028464F /* [CP] Check Pods Manifest.lock */ = {
@@ -293,7 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9862DC3875695C574DF3D12C /* [CP] Copy Pods Resources */ = {
@@ -363,7 +410,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				239D22AA1EEEDD8900D8BF3E /* ViewController.swift in Sources */,
+				239D22A41EEEDD7F00D8BF3E /* UIViewControllerExtension.swift in Sources */,
+				239D22A81EEEDD8900D8BF3E /* BootPageViewController.swift in Sources */,
+				239D22A91EEEDD8900D8BF3E /* ListViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,25 +435,6 @@
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {

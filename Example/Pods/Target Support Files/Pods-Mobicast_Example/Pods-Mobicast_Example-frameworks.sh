@@ -91,12 +91,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.framework"
   install_framework "${PODS_ROOT}/../../Mobicast/Framework/Mobicast.framework"
-  install_framework "${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-Public-3.3.0-Release/GoogleCast.framework"
+  install_framework "${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-Public-3.5.0-Release/GoogleCast.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.framework"
   install_framework "${PODS_ROOT}/../../Mobicast/Framework/Mobicast.framework"
-  install_framework "${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-Public-3.3.0-Release/GoogleCast.framework"
+  install_framework "${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-Public-3.5.0-Release/GoogleCast.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

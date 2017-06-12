@@ -28,16 +28,30 @@ import Mobicast
 To display the player in your view controller, you just need to write the code.
 
 ```ruby
-var discovery: Discovery?
+var discovery: DiscoveryWidget?
 
 override func viewDidLoad() {
 super.viewDidLoad()
 
-discovery = Discovery.init(viewController: self, playerToken:"102")
+discovery = DiscoveryWidget.init(viewController: self, playerToken:"102")
 }
 ```
-
 Where ```viewController``` is your view controller where the player will be displayed. And your ```playerToken```.
+
+
+To open the playlist in a separate window.
+
+```ruby
+var discovery: DiscoveryPlaylist?
+
+override func viewDidLoad() {
+super.viewDidLoad()
+
+discovery = DiscoveryPlaylist.init(viewController: self, playerToken: "102")
+}
+```
+Where ```viewController``` is your view controller from which the transition will be made. And your ```playerToken```.
+
 
 ### License
 

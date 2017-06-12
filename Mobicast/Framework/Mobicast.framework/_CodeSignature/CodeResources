@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Mobicast-Swift.h</key>
 		<data>
-		jSBjxX7KXj1rDLQx7Qf46dL0FU4=
+		78kDeSZxqKsNA1SUp3nyE+V2HzI=
 		</data>
 		<key>Images.bundle/Root.plist</key>
 		<data>
@@ -85,6 +85,42 @@
 		<data>
 		YRmaesZ9ktxybE8Cd4of0BnnF5I=
 		</data>
+		<key>Images.bundle/mcLikeIcon.png</key>
+		<data>
+		nHLblMTlkniHjBkVoo5mqCIE7ik=
+		</data>
+		<key>Images.bundle/mcLikeIcon@2x.png</key>
+		<data>
+		LouGYxQoJjQxnWeMc4+qX8wSpdk=
+		</data>
+		<key>Images.bundle/mcLikeIcon@3x.png</key>
+		<data>
+		PWT4hIA9v0D4HS1HPuVsTsZzSxk=
+		</data>
+		<key>Images.bundle/mcPauseIconPlaylist.png</key>
+		<data>
+		Xx7VYSbyJC5v6n/rsbEMP0BwtPk=
+		</data>
+		<key>Images.bundle/mcPauseIconPlaylist@2x.png</key>
+		<data>
+		WVHheqAU0gVB7ck1Qko7zO/t4Fk=
+		</data>
+		<key>Images.bundle/mcPauseIconPlaylist@3x.png</key>
+		<data>
+		RAI1ooJT3Nn0cpJyTL+of4y2oyk=
+		</data>
+		<key>Images.bundle/mcPlayIconPlaylist.png</key>
+		<data>
+		yO/qisLPRel8foVuygxiFcNAxfc=
+		</data>
+		<key>Images.bundle/mcPlayIconPlaylist@2x.png</key>
+		<data>
+		3AN4YTBjPcs9GJDYVlUuXFmg+VU=
+		</data>
+		<key>Images.bundle/mcPlayIconPlaylist@3x.png</key>
+		<data>
+		GFzGyn8rvMm6BKINUZDB4bKQBtE=
+		</data>
 		<key>Images.bundle/navigationBarBackground.png</key>
 		<data>
 		7/guOkUCVk37uknqXOp58YtO7oc=
@@ -145,6 +181,18 @@
 		<data>
 		HQwQd63d9vlbbL28K7qU5YvhjY0=
 		</data>
+		<key>Images.bundle/splashScreenWhitePlayIcon.png</key>
+		<data>
+		i8mKXDG1todlm5MRsdE7FqDAqMk=
+		</data>
+		<key>Images.bundle/splashScreenWhitePlayIcon@2x.png</key>
+		<data>
+		l1lh3704STxCXujPSuqFhWA20L8=
+		</data>
+		<key>Images.bundle/splashScreenWhitePlayIcon@3x.png</key>
+		<data>
+		cyz1vr++Jzt+3WiYZHGH7Qh0oK0=
+		</data>
 		<key>Images.bundle/threeDotsIcon@2x.png</key>
 		<data>
 		2jJIsejOXVSze5KEfpXzsGKc6l4=
@@ -152,6 +200,14 @@
 		<key>Images.bundle/threeDotsIcon@3x.png</key>
 		<data>
 		mFr5JWvWUuVelJp53ykvjElP9FU=
+		</data>
+		<key>Images.bundle/threeWhiteDotsIcon@2x.png</key>
+		<data>
+		szz58CnCVngsTi44RMN0fWgZnzQ=
+		</data>
+		<key>Images.bundle/threeWhiteDotsIcon@3x.png</key>
+		<data>
+		6CYFXGG8fjF40kumLG19LHv/0nY=
 		</data>
 		<key>Images.bundle/videoThumbImage.png</key>
 		<data>
@@ -167,15 +223,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BgXvpBdrMkKzSoeX+iwjRjVsCic=
+		P2kKZXud9PJdEz2C5755Iqn8obo=
 		</data>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		do8Fwx4x7uSGo2/gHKExTuC+28k=
+		Bt/TojR36q9o6BdEk952P5a+ytk=
 		</data>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		16pDFBTLvMLhs2JS/PQNu8BV93M=
+		8a2tnmkT5DqpF3pT+gtMLwv1JLc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -188,11 +244,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jSBjxX7KXj1rDLQx7Qf46dL0FU4=
+			78kDeSZxqKsNA1SUp3nyE+V2HzI=
 			</data>
 			<key>hash2</key>
 			<data>
-			CWU0OX/UGVLvEJxVr9ZUAAw+1ztnYBpawZxqXTI5Qjs=
+			32L/X/WJvofWb8FJlEi2okU6OMI6eV/YnM9HUFtLoiw=
 			</data>
 		</dict>
 		<key>Images.bundle/Root.plist</key>
@@ -395,6 +451,105 @@
 			3JF4UjZIvjwvHlC8u8sZm6Uh/R11s/6C8zy6290zmtA=
 			</data>
 		</dict>
+		<key>Images.bundle/mcLikeIcon.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nHLblMTlkniHjBkVoo5mqCIE7ik=
+			</data>
+			<key>hash2</key>
+			<data>
+			PFeLBy89pj5L2+yQTDAn9CaDVqpnQ+KG0KzqH3jn3Kc=
+			</data>
+		</dict>
+		<key>Images.bundle/mcLikeIcon@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			LouGYxQoJjQxnWeMc4+qX8wSpdk=
+			</data>
+			<key>hash2</key>
+			<data>
+			G456A8aYrDNIcoLyPTmbSAZnen1PDWZnPnV4141OA4M=
+			</data>
+		</dict>
+		<key>Images.bundle/mcLikeIcon@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PWT4hIA9v0D4HS1HPuVsTsZzSxk=
+			</data>
+			<key>hash2</key>
+			<data>
+			oZPgBmxhEsPkJ5BFVKvqoc/yIgcT40jLSXEPVlpkQy4=
+			</data>
+		</dict>
+		<key>Images.bundle/mcPauseIconPlaylist.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Xx7VYSbyJC5v6n/rsbEMP0BwtPk=
+			</data>
+			<key>hash2</key>
+			<data>
+			2GrIpRakorSn+pIswTErnlbSLe1cMG5xIhemG40eCQw=
+			</data>
+		</dict>
+		<key>Images.bundle/mcPauseIconPlaylist@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WVHheqAU0gVB7ck1Qko7zO/t4Fk=
+			</data>
+			<key>hash2</key>
+			<data>
+			P4IZsGDKRXcEjw1fAGTk4le/akUhIZsQ58m+i4gVpJ4=
+			</data>
+		</dict>
+		<key>Images.bundle/mcPauseIconPlaylist@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RAI1ooJT3Nn0cpJyTL+of4y2oyk=
+			</data>
+			<key>hash2</key>
+			<data>
+			ucY2MBG1zqaWni/1S8W/BDmi0G1e/xed/gRL9uNfg3A=
+			</data>
+		</dict>
+		<key>Images.bundle/mcPlayIconPlaylist.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yO/qisLPRel8foVuygxiFcNAxfc=
+			</data>
+			<key>hash2</key>
+			<data>
+			BhJUXOHsnLz9iDlwJ4DyH8EUjzzyPQxlF4cCeSQPmUU=
+			</data>
+		</dict>
+		<key>Images.bundle/mcPlayIconPlaylist@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3AN4YTBjPcs9GJDYVlUuXFmg+VU=
+			</data>
+			<key>hash2</key>
+			<data>
+			Rob17RkQok3uy07JHKs1w0zNHSQkjOjstRUnLKmK7gw=
+			</data>
+		</dict>
+		<key>Images.bundle/mcPlayIconPlaylist@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GFzGyn8rvMm6BKINUZDB4bKQBtE=
+			</data>
+			<key>hash2</key>
+			<data>
+			2vzdW62FMz9UnVBep0l1UYUmDtkBbV6xc9luIOVNsJQ=
+			</data>
+		</dict>
 		<key>Images.bundle/navigationBarBackground.png</key>
 		<dict>
 			<key>hash</key>
@@ -560,6 +715,39 @@
 			pS7eT0s4xdw5Uj0SUYT9cHZYSJR/H2WN+EaEJtty3hw=
 			</data>
 		</dict>
+		<key>Images.bundle/splashScreenWhitePlayIcon.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			i8mKXDG1todlm5MRsdE7FqDAqMk=
+			</data>
+			<key>hash2</key>
+			<data>
+			RvFf1X4HroeBxLwzZL8qBKRStrNg9pNX2/Sj23/woKQ=
+			</data>
+		</dict>
+		<key>Images.bundle/splashScreenWhitePlayIcon@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			l1lh3704STxCXujPSuqFhWA20L8=
+			</data>
+			<key>hash2</key>
+			<data>
+			CJwlzDV1KXnfjPeZiXL0k0hRiUGtix072Hna1kAHPJM=
+			</data>
+		</dict>
+		<key>Images.bundle/splashScreenWhitePlayIcon@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cyz1vr++Jzt+3WiYZHGH7Qh0oK0=
+			</data>
+			<key>hash2</key>
+			<data>
+			PxwKbnrM+/uGfH1tNFaL46yp+E3ERensRZdompey+kc=
+			</data>
+		</dict>
 		<key>Images.bundle/threeDotsIcon@2x.png</key>
 		<dict>
 			<key>hash</key>
@@ -580,6 +768,28 @@
 			<key>hash2</key>
 			<data>
 			ufHzeBZLgGiCTTCxSSGq1FpkhfpDTKMoTfCOKFvQofg=
+			</data>
+		</dict>
+		<key>Images.bundle/threeWhiteDotsIcon@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			szz58CnCVngsTi44RMN0fWgZnzQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			FZvkEEYoIS3CeP5zr91R0E3JG5VW32oFT7uxT5XcQ/U=
+			</data>
+		</dict>
+		<key>Images.bundle/threeWhiteDotsIcon@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6CYFXGG8fjF40kumLG19LHv/0nY=
+			</data>
+			<key>hash2</key>
+			<data>
+			6n9WlQdVcdJwUJWkT+frlPz9hhGdAVAuCDhLOZXUwoM=
 			</data>
 		</dict>
 		<key>Images.bundle/videoThumbImage.png</key>
@@ -619,22 +829,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			do8Fwx4x7uSGo2/gHKExTuC+28k=
+			Bt/TojR36q9o6BdEk952P5a+ytk=
 			</data>
 			<key>hash2</key>
 			<data>
-			NUT/SRXkrSUgyJ4BDbnSzYtq6l+gSQqWmwzEG1vRAS8=
+			SLsItTR1iGjIAl39+LZL/OubjnESUlmY1+oBnOlC/Lo=
 			</data>
 		</dict>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			16pDFBTLvMLhs2JS/PQNu8BV93M=
+			8a2tnmkT5DqpF3pT+gtMLwv1JLc=
 			</data>
 			<key>hash2</key>
 			<data>
-			qppx5WEpKfQZm9OzRMPRcCO4Y49PBAcGqor4A7UlxuM=
+			GrWKbeUvddUM0RsVhusxD95T5A2TDhgSSepdf4G16YM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
