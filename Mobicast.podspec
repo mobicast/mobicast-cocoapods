@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
-s.version          = '1.1.1'
+s.version          = '1.1.2'
 s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ s.description      = <<-DESC
 
 import Mobicast
 
-Discovery.init(viewController: self)
+DiscoveryWidget.init(viewController: self, playerToken:"102")
 
 DESC
 
@@ -43,5 +43,5 @@ s.vendored_frameworks = 'Mobicast/Framework/Mobicast.framework'
 # s.public_header_files = 'Pod/Classes/**/*.h'
 s.frameworks = 'UIKit', 'AVFoundation'
 s.dependency 'GoogleAds-IMA-iOS-SDK', '3.5.2'
-s.dependency 'google-cast-sdk', '3.2.0'
+s.dependency 'google-cast-sdk', '3.5.0'
 end

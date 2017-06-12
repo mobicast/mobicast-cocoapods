@@ -1,15 +1,16 @@
 import UIKit
 import Mobicast
 
-class ViewController: UIViewController {
+class ViewController: UIViewControllerExtension {
 
-    var discovery: Discovery?
-    
+    var discovery: DiscoveryWidget?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        discovery = Discovery.init(viewController: self, playerToken: "102")
+
+        // Do any additional setup after loading the view.
+
+        addMobicast()
     }
 
     override func didReceiveMemoryWarning() {
@@ -17,5 +18,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-}
+    func addMobicast() {
 
+        discovery = DiscoveryWidget.init(viewController: self, playerToken:"102")
+
+        discovery?.developerMode = true
+
+    }
+
+}

@@ -1,11 +1,11 @@
 PODS:
-  - google-cast-sdk (3.3.0):
-    - google-cast-sdk/Core (= 3.3.0)
-  - google-cast-sdk/Core (3.3.0)
-  - GoogleAds-IMA-iOS-SDK (3.5.0)
-  - Mobicast (0.1.0):
-    - google-cast-sdk (>= 3.2.0)
-    - GoogleAds-IMA-iOS-SDK (~> 3.4)
+  - google-cast-sdk (3.5.0):
+    - google-cast-sdk/Core (= 3.5.0)
+  - google-cast-sdk/Core (3.5.0)
+  - GoogleAds-IMA-iOS-SDK (3.5.2)
+  - Mobicast (1.1.1):
+    - google-cast-sdk (= 3.5.0)
+    - GoogleAds-IMA-iOS-SDK (= 3.5.2)
 
 DEPENDENCIES:
   - Mobicast (from `../`)
@@ -15,10 +15,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  google-cast-sdk: da1989cbc1b9ff7b50ddb9dae5b1969d95a65a0f
-  GoogleAds-IMA-iOS-SDK: 181d287715c94dc1674439eb12a9decbfb872ee6
-  Mobicast: 46f3917a1d310871248343b10b9c91523e33ce83
+  google-cast-sdk: fc3728ead66150ac746e001ba03a44e4b10e359e
+  GoogleAds-IMA-iOS-SDK: a0692ecc51d7c8816d5245edfb8a69c553cd84d4
+  Mobicast: 9ac1d9244ffeb3bcb8b28dad50523a245fa79850
 
 PODFILE CHECKSUM: a0c43cf6984fc5ac7158281925d47c4131c18144
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
