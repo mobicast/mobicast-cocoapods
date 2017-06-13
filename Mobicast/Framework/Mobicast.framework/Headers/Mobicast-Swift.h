@@ -144,17 +144,21 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-@class UIViewController;
+@class UINavigationController;
 
 @interface DiscoveryPlaylist (SWIFT_EXTENSION(Mobicast))
-/// Init a new video list with a parent view controller.
-/// @param viewController View controller where the preview video list will be displayed.
+/// Show a new video list in a parent navigation controller.
+/// @param navigationController Navigation controller where the preview video list will be displayed.
 /// @param playerToken Player token.
-- (nonnull instancetype)initWithViewController:(UIViewController * _Nonnull)viewController playerToken:(NSString * _Nonnull)playerToken;
+- (nonnull instancetype)initWithShowInNavigationController:(UINavigationController * _Nonnull)navigationController playerToken:(NSString * _Nonnull)playerToken;
+/// Show a new video list in a new window.
+/// @param playerToken Player token.
+- (nonnull instancetype)initWithShowInNewWindowWithPlayerToken:(NSString * _Nonnull)playerToken;
 /// Devoloper mode status. False by defalult.
 @property (nonatomic) BOOL isDeveloperMode;
 @end
 
+@class UIViewController;
 
 SWIFT_CLASS("_TtC8Mobicast15DiscoveryWidget")
 @interface DiscoveryWidget : NSObject
@@ -163,7 +167,7 @@ SWIFT_CLASS("_TtC8Mobicast15DiscoveryWidget")
 /// Init a new preview video list with a parent view controller and player token.
 /// @param viewController View controller where the preview video list will be displayed.
 /// @param playerToken Player token.
-- (nonnull instancetype)initWithViewController:(UIViewController * _Nonnull)viewController playerToken:(NSString * _Nonnull)playerToken OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithShowInViewController:(UIViewController * _Nonnull)viewController playerToken:(NSString * _Nonnull)playerToken OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

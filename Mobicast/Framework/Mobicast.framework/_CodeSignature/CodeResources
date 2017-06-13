@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Mobicast-Swift.h</key>
 		<data>
-		78kDeSZxqKsNA1SUp3nyE+V2HzI=
+		nLJVUHyp6f7NZPxDTfB7czWgweY=
 		</data>
 		<key>Images.bundle/Root.plist</key>
 		<data>
@@ -227,11 +227,11 @@
 		</data>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		Bt/TojR36q9o6BdEk952P5a+ytk=
+		LEfTDDUUxz2JuByKt40JBMXgf7Y=
 		</data>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		8a2tnmkT5DqpF3pT+gtMLwv1JLc=
+		Gr630EVddVjks6pHcF4al/BxmnI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -244,11 +244,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			78kDeSZxqKsNA1SUp3nyE+V2HzI=
+			nLJVUHyp6f7NZPxDTfB7czWgweY=
 			</data>
 			<key>hash2</key>
 			<data>
-			32L/X/WJvofWb8FJlEi2okU6OMI6eV/YnM9HUFtLoiw=
+			peh14oooYki9F6RmD1yAUo1ykjkFMg7l6KHDodFlXqY=
 			</data>
 		</dict>
 		<key>Images.bundle/Root.plist</key>
@@ -829,22 +829,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bt/TojR36q9o6BdEk952P5a+ytk=
+			LEfTDDUUxz2JuByKt40JBMXgf7Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			SLsItTR1iGjIAl39+LZL/OubjnESUlmY1+oBnOlC/Lo=
+			pgKNUUcW3uo/lNnxlYkavZDtsVYXpEfCK71dVLq5N2Y=
 			</data>
 		</dict>
 		<key>Modules/Mobicast.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8a2tnmkT5DqpF3pT+gtMLwv1JLc=
+			Gr630EVddVjks6pHcF4al/BxmnI=
 			</data>
 			<key>hash2</key>
 			<data>
-			GrWKbeUvddUM0RsVhusxD95T5A2TDhgSSepdf4G16YM=
+			FJn17hEKpBVm4tpzFIlm4lSLr9YQkgyjsFU/gt5GQbI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

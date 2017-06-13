@@ -33,7 +33,7 @@ var discovery: DiscoveryWidget?
 override func viewDidLoad() {
 super.viewDidLoad()
 
-discovery = DiscoveryWidget.init(viewController: self, playerToken:"102")
+discovery = DiscoveryWidget.init(showInViewController: self, playerToken:"102")
 }
 ```
 Where ```viewController``` is your view controller where the player will be displayed. And your ```playerToken```.
@@ -47,10 +47,10 @@ var discovery: DiscoveryPlaylist?
 override func viewDidLoad() {
 super.viewDidLoad()
 
-discovery = DiscoveryPlaylist.init(viewController: self, playerToken: "102")
+discovery = DiscoveryPlaylist.init(showInNavigationController: self.navigationController!, playerToken: "102")
 }
 ```
-Where ```viewController``` is your view controller from which the transition will be made. And your ```playerToken```.
+Where ```navigationController``` is your navigation controller from which the transition will be made. And your ```playerToken```.
 
 
 ### License

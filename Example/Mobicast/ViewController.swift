@@ -20,7 +20,7 @@ class ViewController: UIViewControllerExtension {
 
     func addMobicast() {
 
-        discovery = DiscoveryWidget.init(viewController: self, playerToken:"102")
+        discovery = DiscoveryWidget.init(showInViewController: self, playerToken:"102")
 
         discovery?.developerMode = true
 
