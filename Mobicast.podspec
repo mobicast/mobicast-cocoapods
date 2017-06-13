@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
-s.version          = '1.1.2'
+s.version          = '1.1.3'
 s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ s.description      = <<-DESC
 
 import Mobicast
 
-DiscoveryWidget.init(viewController: self, playerToken:"102")
+DiscoveryWidget.init(showInViewController: self, playerToken:'102')
 
 DESC
 
@@ -29,7 +29,7 @@ s.homepage         = 'https://github.com/mobicast/mobicast-cocoapods'
 # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = 'Mobicast'
-s.source           = { :git => 'https://github.com/mobicast/mobicast-cocoapods.git', :tag => '#{s.version}' }
+s.source           = { :git => "https://github.com/mobicast/mobicast-cocoapods.git", :tag => "#{s.version}" }
 # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
 s.ios.deployment_target = '8.0'

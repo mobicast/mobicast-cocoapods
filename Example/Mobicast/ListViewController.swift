@@ -82,7 +82,7 @@ class ListViewController: UIViewControllerExtension, UITableViewDelegate, UITabl
 
     func openDiscoveryPlayList() {
 
-        discoveryPlaylist = DiscoveryPlaylist.init(viewController: self, playerToken: "102")
+        discoveryPlaylist = DiscoveryPlaylist.init(showInNavigationController: self.navigationController!, playerToken: "102")
 
         discoveryPlaylist?.isDeveloperMode = true
     }
