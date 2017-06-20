@@ -3,7 +3,7 @@ PODS:
     - google-cast-sdk/Core (= 3.5.0)
   - google-cast-sdk/Core (3.5.0)
   - GoogleAds-IMA-iOS-SDK (3.5.2)
-  - Mobicast (1.1.1):
+  - Mobicast (1.1.4):
     - google-cast-sdk (= 3.5.0)
     - GoogleAds-IMA-iOS-SDK (= 3.5.2)
 
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   google-cast-sdk: fc3728ead66150ac746e001ba03a44e4b10e359e
   GoogleAds-IMA-iOS-SDK: a0692ecc51d7c8816d5245edfb8a69c553cd84d4
-  Mobicast: 9ac1d9244ffeb3bcb8b28dad50523a245fa79850
+  Mobicast: a208b2778875cd0cc52ba151945d2de2a7f61de6
 
 PODFILE CHECKSUM: a0c43cf6984fc5ac7158281925d47c4131c18144
 

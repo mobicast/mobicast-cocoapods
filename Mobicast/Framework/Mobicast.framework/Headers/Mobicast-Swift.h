@@ -172,21 +172,6 @@ SWIFT_CLASS("_TtC8Mobicast15DiscoveryWidget")
 @end
 
 
-SWIFT_CLASS("_TtC8Mobicast22ExternalDisplayManager")
-@interface ExternalDisplayManager : NSObject
-/// To manage just one instance of this class
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ExternalDisplayManager * _Nonnull sharedInstance;)
-+ (ExternalDisplayManager * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-/// Is an external display currently present
-/// Airplay mirroring for example
-///
-/// returns:
-/// true or false
-- (BOOL)isExternalConnection SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 @interface UIFont (SWIFT_EXTENSION(Mobicast))
 @end
 
@@ -196,23 +181,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ExternalDisp
 
 
 @interface UINavigationController (SWIFT_EXTENSION(Mobicast))
-@end
-
-@class MPVolumeView;
-
-SWIFT_CLASS("_TtC8Mobicast7Volumer")
-@interface Volumer : NSObject
-@property (nonatomic, copy) void (^ _Nullable block)(float);
-/// Setup with volume value and block with change volume action.
-/// @param volumeValue Volume value.
-/// @param block Change volume action.
-- (void)setupWithVolumeValue:(float)volumeValue :(void (^ _Nonnull)(float))block;
-/// Reset.
-- (void)reset;
-/// Set MPVolumeView.
-/// @param volumeView MPVolumeView.
-- (void)setWithVolumeView:(MPVolumeView * _Nonnull)volumeView;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop

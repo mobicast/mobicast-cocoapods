@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
-s.version          = '1.1.3'
+s.version          = '1.1.4'
 s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
@@ -26,21 +26,14 @@ DiscoveryWidget.init(showInViewController: self, playerToken:'102')
 DESC
 
 s.homepage         = 'https://github.com/mobicast/mobicast-cocoapods'
-# s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = 'Mobicast'
 s.source           = { :git => "https://github.com/mobicast/mobicast-cocoapods.git", :tag => "#{s.version}" }
-# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
 s.ios.deployment_target = '8.0'
 
 s.vendored_frameworks = 'Mobicast/Framework/Mobicast.framework'
 
-# s.resource_bundles = {
-#   'Mobicast' => ['Mobicast/Assets/*.png']
-# }
-
-# s.public_header_files = 'Pod/Classes/**/*.h'
 s.frameworks = 'UIKit', 'AVFoundation'
 s.dependency 'GoogleAds-IMA-iOS-SDK', '3.5.2'
 s.dependency 'google-cast-sdk', '3.5.0'

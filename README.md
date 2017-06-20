@@ -21,13 +21,13 @@ Now you can use Mobicast.
 
 At first you need to import the library.
 
-```ruby
+```swift
 import Mobicast
 ```
 
 To display the player in your view controller, you just need to write the code.
 
-```ruby
+```swift
 var discovery: DiscoveryWidget?
 
 override func viewDidLoad() {
@@ -41,7 +41,7 @@ Where ```viewController``` is your view controller where the player will be disp
 
 To open the playlist in a separate window.
 
-```ruby
+```swift
 var discovery: DiscoveryPlaylist?
 
 override func viewDidLoad() {
@@ -52,6 +52,7 @@ discovery = DiscoveryPlaylist.init(showInNavigationController: self.navigationCo
 ```
 Where ```navigationController``` is your navigation controller from which the transition will be made. And your ```playerToken```.
 
+For correct work of the framework, you need to add ```UIViewControllerBasedStatusBarAppearance``` in your application's ```Info.plist``` and set it to Type: Boolean and Value: ```NO```.
 
 ### License
 

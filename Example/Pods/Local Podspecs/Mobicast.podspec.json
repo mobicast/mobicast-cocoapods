@@ -1,8 +1,8 @@
 {
   "name": "Mobicast",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "summary": "Mobicast video player.",
-  "description": "import Mobicast\n\nDiscovery.init(viewController: self)",
+  "description": "import Mobicast\n\nDiscoveryWidget.init(showInViewController: self, playerToken:'102')",
   "homepage": "https://github.com/mobicast/mobicast-cocoapods",
   "license": {
     "type": "MIT",
@@ -11,7 +11,7 @@
   "authors": "Mobicast",
   "source": {
     "git": "https://github.com/mobicast/mobicast-cocoapods.git",
-    "tag": "#{s.version}"
+    "tag": "1.1.4"
   },
   "platforms": {
     "ios": "8.0"
