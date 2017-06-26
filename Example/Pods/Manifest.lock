@@ -1,9 +1,11 @@
 PODS:
+  - FBAudienceNetwork (4.23.0)
   - google-cast-sdk (3.5.0):
     - google-cast-sdk/Core (= 3.5.0)
   - google-cast-sdk/Core (3.5.0)
   - GoogleAds-IMA-iOS-SDK (3.5.2)
-  - Mobicast (1.1.4):
+  - Mobicast (1.1.6):
+    - FBAudienceNetwork (= 4.23.0)
     - google-cast-sdk (= 3.5.0)
     - GoogleAds-IMA-iOS-SDK (= 3.5.2)
 
@@ -12,12 +14,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Mobicast:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
+  FBAudienceNetwork: 20a0e3d20e377dbb6708365e4c6d0711bf08ca97
   google-cast-sdk: fc3728ead66150ac746e001ba03a44e4b10e359e
   GoogleAds-IMA-iOS-SDK: a0692ecc51d7c8816d5245edfb8a69c553cd84d4
-  Mobicast: a208b2778875cd0cc52ba151945d2de2a7f61de6
+  Mobicast: 63ab980e254f2ca41e6fbab6b0be2b7c83ee2fcc
 
 PODFILE CHECKSUM: a0c43cf6984fc5ac7158281925d47c4131c18144
 
