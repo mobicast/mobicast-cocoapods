@@ -1,13 +1,13 @@
 PODS:
-  - FBAudienceNetwork (4.23.0)
   - google-cast-sdk (3.5.0):
     - google-cast-sdk/Core (= 3.5.0)
   - google-cast-sdk/Core (3.5.0)
   - GoogleAds-IMA-iOS-SDK (3.5.2)
-  - Mobicast (1.1.6):
-    - FBAudienceNetwork (= 4.23.0)
+  - KochavaTrackeriOS (3.1.5)
+  - Mobicast (1.1.7):
     - google-cast-sdk (= 3.5.0)
     - GoogleAds-IMA-iOS-SDK (= 3.5.2)
+    - KochavaTrackeriOS
 
 DEPENDENCIES:
   - Mobicast (from `../`)
@@ -17,10 +17,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBAudienceNetwork: 20a0e3d20e377dbb6708365e4c6d0711bf08ca97
   google-cast-sdk: fc3728ead66150ac746e001ba03a44e4b10e359e
   GoogleAds-IMA-iOS-SDK: a0692ecc51d7c8816d5245edfb8a69c553cd84d4
-  Mobicast: 63ab980e254f2ca41e6fbab6b0be2b7c83ee2fcc
+  KochavaTrackeriOS: 3a37ef40724be156f721b3de44173790fca8768e
+  Mobicast: b7360422a03ebc5f49b635bf4e8facfcc7c84d84
 
 PODFILE CHECKSUM: a0c43cf6984fc5ac7158281925d47c4131c18144
 
