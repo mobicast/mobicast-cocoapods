@@ -332,6 +332,7 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 - (void)showControlsForPausedExternalVideoWithIsAdPlaying:(BOOL)isAdPlaying;
 /// Stop the external video.
 - (void)showControlsForStoppedExternalVideo;
+- (void)showControlsForVideoReadyToPlay;
 /// Pause the video before playing on an external device.
 - (void)pauseVideoBeforeOpenExternal;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -517,7 +518,30 @@ SWIFT_CLASS("_TtC8Mobicast13DiscoveryData")
 
 SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 @interface DiscoveryPlaylist : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface DiscoveryPlaylist (SWIFT_EXTENSION(Mobicast))
+/// Get DiscoveryPlaylistViewController.
+/// @param playerToken Player token.
+/// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
+- (nonnull instancetype)initWithDiscoveryPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
+/// Get PlaylistViewController.
+/// @param playerToken Player token.
+/// @param completionHandler Completion handler which returns PlayListViewController instance
+- (nonnull instancetype)initWithPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken autoplayEnabled:(BOOL)autoplayEnabled completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
+/// Get PlaylistViewController.
+/// @param completionHandler Completion handler which returns
+/// <ul>
+///   <li>
+///     PlayListViewController instance
+///   </li>
+///   <li>
+///     Block for passing video playlist in to the PlayListViewController instance
+///   </li>
+/// </ul>
+- (nonnull instancetype)initWithPlaylistWithAutoplayEnabled:(BOOL)autoplayEnabled completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull, void (^ _Nonnull)(NSArray * _Nullable, NSString * _Nullable, NSString * _Nullable)))completionHandler;
 @end
 
 @class UINavigationController;
@@ -530,10 +554,7 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 /// Show a new video list in a new window.
 /// @param playerToken Player token.
 - (nonnull instancetype)initWithShowInNewWindowWithPlayerToken:(NSString * _Nonnull)playerToken;
-/// Get PlaylistViewController.
-/// @param playerToken Player token.
-- (nonnull instancetype)initWithPlayerToken:(NSString * _Nonnull)playerToken completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
-/// Devoloper mode status. False by defalult.
+/// Developer mode status. False by defalult.
 @property (nonatomic) BOOL isDeveloperMode;
 @end
 
@@ -558,13 +579,19 @@ SWIFT_CLASS("_TtC8Mobicast21DiscoveryPlaylistCell")
 @end
 
 
+SWIFT_CLASS("_TtC8Mobicast31UIViewControllerSharedExtension")
+@interface UIViewControllerSharedExtension : UIViewController
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC8Mobicast25UIViewControllerExtension")
-@interface UIViewControllerExtension : UIViewController
+@interface UIViewControllerExtension : UIViewControllerSharedExtension
 /// Variable to store the status of the status bar of the parent view controller.
 @property (nonatomic) BOOL isStatusBarHidden;
 @property (nonatomic) BOOL showBackButton;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -590,7 +617,7 @@ SWIFT_CLASS("_TtC8Mobicast25UIViewControllerExtension")
 /// More button action.
 - (void)didSelectMoreButton;
 /// Set up title font and color.
-- (void)setTitleWithTitle:(NSString * _Nonnull)title;
+@property (nonatomic, copy) NSString * _Nullable title;
 /// Orientation changed action.
 - (void)orientationChanged;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -782,6 +809,15 @@ SWIFT_CLASS("_TtC8Mobicast23LocalVideoPlayerManager")
 - (nonnull instancetype)initWithVideoItem:(VideoItem * _Nonnull)withVideoItem withRootController:(UIViewController * _Nonnull)withRootController withVideoViews:(VideoPlayerContentViews * _Nonnull)withVideoViews OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UILabel;
+
+SWIFT_CLASS("_TtC8Mobicast22MANavBarTitleViewClass")
+@interface MANavBarTitleViewClass : UIView
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified maTitleView;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class AVPlayerItem;
 
 SWIFT_CLASS("_TtC8Mobicast12MobiAvPlayer")
@@ -867,17 +903,30 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @property (nonatomic, copy) NSString * _Null_unspecified adtag;
 @property (nonatomic, copy) NSString * _Null_unspecified widgetId;
 @property (nonatomic, copy) NSString * _Nullable videoTag;
+@property (nonatomic, copy) NSString * _Nullable playerToken;
 /// <ul>
 ///   <li>
 ///     The index of the cell which is now active.
 ///   </li>
 /// </ul>
-@property (nonatomic) BOOL isStartPaingVideo;
-@property (nonatomic) NSInteger highlghtedCellIndex;
+@property (nonatomic) NSInteger highlightedCellIndex;
 /// The index of the video that should start playing.
 @property (nonatomic) NSInteger startPlayVideo;
 /// The index of the video that was selected on the previous page.
 @property (nonatomic) NSInteger selectedVideoIndex;
+/// State of videos autoplaying mode when view is showed.
+@property (nonatomic) BOOL isAutoPlayEnabled;
+/// State of videos autoplaying mode for next video.
+/// \code
+/// internal var isAutoPlayFirstVideoEnabled: Bool = true {
+///
+///     didSet {
+///         isAutoPlayEnabled = isAutoPlayFirstVideoEnabled
+///     }
+/// }
+///
+/// \endcodeState of videos autoplaying mode for next video.
+@property (nonatomic) BOOL isAutoScrollNextVideoEnabled;
 /// State of full screen mode.
 @property (nonatomic) BOOL isFullScreenEnabled;
 /// State of full screen mode.
@@ -908,6 +957,9 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 - (void)handleAirplayMirroringDidConnectNotificationWithANotification:(NSNotification * _Nonnull)aNotification;
 - (void)handleAirplayMirroringDidDisconnectNotification:(NSNotification * _Nonnull)aNotification;
 - (void)setupChromecastManager;
+/// Reload data
+- (void)showData;
+- (void)totalReloadData;
 /// Create table view for a display video playlist.
 - (void)setupTableView;
 /// Set up a playlist with an array of videos and the index of the selected video.
@@ -928,12 +980,15 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 - (void)playVideoAt:(NSIndexPath * _Nonnull)indexPath;
 /// Highlight or dimmed the cell.
 /// @param cellIndex The index of the cell.
-- (void)higlightCellWithCellIndex:(NSInteger)cellIndex;
+- (void)highlightCellWithCellIndex:(NSInteger)cellIndex;
+/// Highlight or dimmed the cell.
+/// @param cellIndex The index of the cell.
+- (void)highlightCellOnViewAppearWithCellIndex:(NSInteger)cellIndex;
 /// Start playing the current video with a parameter to determine whether you want to scroll the table.
 /// @param withScrolling A parameter to determine whether you want to scroll the table.
-- (void)setupCurrentCellWithScrolling:(BOOL)withScrolling;
+- (void)setupCurrentCellWithScrolling:(BOOL)withScrolling allowPlay:(BOOL)allowPlay;
 /// Start playing video after scrolling.
-- (void)startVideoAfterScrolling;
+- (void)startVideoAfterScrollingWithScrolling:(BOOL)withScrolling allowPlay:(BOOL)allowPlay;
 /// Open videon in full screen mode.
 - (void)openVideoInFullScreen;
 /// Close video in full screen mode.
@@ -998,6 +1053,7 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @interface UINavigationController (SWIFT_EXTENSION(Mobicast))
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @end
+
 
 
 
@@ -1116,7 +1172,6 @@ SWIFT_PROTOCOL("_TtP8Mobicast40VideoPlayerTouchesControllerViewDelegate_")
 
 @class UIButton;
 @class UISlider;
-@class UILabel;
 @class MPVolumeView;
 @class VideoPlayerTouchesControllerView;
 @class VideoPlayerInfoPanelLandscapeMode;
