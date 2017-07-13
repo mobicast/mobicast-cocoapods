@@ -256,7 +256,7 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 /// Block for change external device player state.
 @property (nonatomic, copy) void (^ _Nonnull changeExternalDevicePlayerTime)(double);
 /// Block for check is external device displaying video.
-@property (nonatomic, copy) BOOL (^ _Nonnull isExternalDeviceDisplaingVideo)(void);
+@property (nonatomic, copy) BOOL (^ _Nonnull isExternalDeviceDisplayingVideo)(void);
 /// Block for check is external device displaying current video.
 @property (nonatomic, copy) BOOL (^ _Nonnull isExternalDevicePlayingCurrentVideo)(void);
 /// Block for check duration of vodeo on external device.
@@ -326,6 +326,8 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 - (void)pausePayingVideo;
 /// Start paying the video externals.
 - (void)showControlsForPlayingExternalVideoWithCurrentTime:(double)currentTime duration:(double)duration isAdPlaying:(BOOL)isAdPlaying;
+/// Pausing the video externals.
+- (void)showControlsForPausingExternalVideoWithIsAdPlaying:(BOOL)isAdPlaying;
 /// Start loading the video externals.
 - (void)showControlsForLoadingExternalVideo;
 /// Pause the external video.
@@ -393,53 +395,43 @@ SWIFT_CLASS("_TtC8Mobicast21AirplayViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC8Mobicast18CastMessageChannel")
-@interface CastMessageChannel : GCKCastChannel
-- (void)didReceiveTextMessage:(NSString * _Nonnull)message;
-- (nonnull instancetype)initWithNamespace:(NSString * _Nonnull)protocolNamespace OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class GCKDevice;
+@class UIBarButtonItem;
 @class UIActionSheet;
-@class GCKDeviceManager;
-@class GCKApplicationMetadata;
-@class GCKMediaControlChannel;
+@class GCKSessionManager;
+@class GCKSession;
+@class GCKGenericChannel;
+@class GCKRemoteMediaClient;
+@class GCKMediaStatus;
+@class GCKDevice;
 
 SWIFT_CLASS("_TtC8Mobicast17ChromecastManager")
-@interface ChromecastManager : NSObject <GCKLoggerDelegate, GCKDeviceScannerListener, UIActionSheetDelegate, GCKDeviceManagerDelegate, GCKMediaControlChannelDelegate>
-- (void)logFromFunctionWithFunction:(int8_t const * _Nonnull)function message:(NSString * _Null_unspecified)message;
+@interface ChromecastManager : NSObject <GCKSessionManagerListener, GCKGenericChannelDelegate, GCKRemoteMediaClientListener, GCKDeviceScannerListener, UIActionSheetDelegate>
+@property (nonatomic) BOOL casting;
+@property (nonatomic) BOOL castStreamPlaying;
+@property (nonatomic) NSTimeInterval castMediaDuration;
+@property (nonatomic, readonly, copy) NSString * _Nonnull kTestAppAdTagUrlWithSkip;
 - (void)initDeviceScanner SWIFT_METHOD_FAMILY(none);
-- (void)chooseDevice;
-- (void)updateStatsFromDevice;
-- (void)connectToDevice;
-- (void)deviceDisconnected;
+- (UIBarButtonItem * _Nonnull)getCastBarButtonItem SWIFT_WARN_UNUSED_RESULT;
 - (void)volumeControl;
-- (void)updateButtonStates;
-- (BOOL)isHasConnection SWIFT_WARN_UNUSED_RESULT;
+- (void)actionSheet:(UIActionSheet * _Nonnull)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)disconnect;
+- (void)sessionManager:(GCKSessionManager * _Nonnull)sessionManager didStartSession:(GCKSession * _Nonnull)session;
+- (void)sessionManager:(GCKSessionManager * _Nonnull)sessionManager didResumeSession:(GCKSession * _Nonnull)session;
+- (void)sessionManager:(GCKSessionManager * _Nonnull)sessionManager didEndSession:(GCKSession * _Nonnull)session withError:(NSError * _Nullable)error;
+- (void)sessionManager:(GCKSessionManager * _Nonnull)sessionManager didFailToStartSession:(GCKSession * _Nonnull)session withError:(NSError * _Nonnull)error;
+- (void)castChannel:(GCKGenericChannel * _Nonnull)channel didReceiveTextMessage:(NSString * _Nonnull)message withNamespace:(NSString * _Nonnull)protocolNamespace;
+- (void)remoteMediaClient:(GCKRemoteMediaClient * _Nonnull)client didUpdateMediaStatus:(GCKMediaStatus * _Nullable)mediaStatus;
+- (void)deviceDidComeOnline:(GCKDevice * _Nonnull)device;
+- (void)deviceDidGoOffline:(GCKDevice * _Nonnull)device;
 - (void)startPlayVideo;
-- (void)showErrorWithError:(NSError * _Nonnull)error;
+- (void)sendMessageWithMessage:(NSString * _Nonnull)message;
 - (NSInteger)getIndexOfVideo SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)getIdOfVideo SWIFT_WARN_UNUSED_RESULT;
+- (void)sendCurrentPlayingStatus;
 - (void)changePlayerState;
 - (void)play;
 - (void)pause;
 - (void)seekToTimeInterval:(NSTimeInterval)time;
-- (BOOL)isDisplayingVideo SWIFT_WARN_UNUSED_RESULT;
-- (void)sendCurrentPlayingStatus;
-- (double)durationOfCurrentVideo SWIFT_WARN_UNUSED_RESULT;
-- (void)deviceDidComeOnline:(GCKDevice * _Nonnull)device;
-- (void)deviceDidGoOffline:(GCKDevice * _Nonnull)device;
-- (void)actionSheet:(UIActionSheet * _Nonnull)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
-- (void)deviceManagerDidConnect:(GCKDeviceManager * _Nonnull)deviceManager;
-- (void)deviceManager:(GCKDeviceManager * _Nonnull)deviceManager didConnectToCastApplication:(GCKApplicationMetadata * _Nonnull)applicationMetadata sessionID:(NSString * _Nonnull)sessionID launchedApplication:(BOOL)launchedApplication;
-- (void)deviceManager:(GCKDeviceManager * _Nonnull)deviceManager didFailToConnectToApplicationWithError:(NSError * _Nonnull)error;
-- (void)deviceManager:(GCKDeviceManager * _Nonnull)deviceManager didFailToConnectWithError:(NSError * _Nonnull)error;
-- (void)deviceManager:(GCKDeviceManager * _Nonnull)deviceManager didDisconnectWithError:(NSError * _Nullable)error;
-- (void)deviceManager:(GCKDeviceManager * _Nonnull)deviceManager didReceiveApplicationMetadata:(GCKApplicationMetadata * _Nullable)metadata;
-- (void)mediaControlChannelDidUpdateStatus:(GCKMediaControlChannel * _Nonnull)mediaControlChannel;
-- (void)sendMessageWithMessage:(NSString * _Nonnull)message;
-- (void)castChannel:(CastMessageChannel * _Nonnull)channel didReceiveMessage:(NSString * _Nonnull)message;
+- (NSInteger)getIdOfVideo SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
@@ -592,6 +584,7 @@ SWIFT_CLASS("_TtC8Mobicast25UIViewControllerExtension")
 @property (nonatomic) BOOL isStatusBarHidden;
 @property (nonatomic) BOOL showBackButton;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -601,19 +594,13 @@ SWIFT_CLASS("_TtC8Mobicast25UIViewControllerExtension")
 /// Setup back button.
 - (void)setupBackButton;
 /// Set up navigation bar full screen button.
-- (void)setupRightNavigationBarItemsWithShowChromecastButton:(BOOL)showChromecastButton chromecastButtonStateEnabled:(BOOL)chromecastButtonStateEnabled;
+- (void)setupRightNavigationBarItemsWithChromeCastBarButtonitem:(UIBarButtonItem * _Nullable)barButtonitem;
 /// Set up navigation bar more button.
 - (void)setupRightNavigationBarMoreButtonItemWithShowButton:(BOOL)showButton;
-/// Show chromecast button.
-- (void)showChromecastButtonWithButtonStateEnabled:(BOOL)buttonStateEnabled;
-/// Hide chromecast button.
-- (void)hideChromecastButton;
 /// Back button action.
 - (void)didSelectBackButton;
 /// Full screen button action.
 - (void)didSelectFullScreenButton;
-/// Crhomecast button action.
-- (void)didSelectCrhomecastButton;
 /// More button action.
 - (void)didSelectMoreButton;
 /// Set up title font and color.
@@ -889,6 +876,26 @@ SWIFT_CLASS("_TtC8Mobicast17NetworkAPIManager")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC8Mobicast26NetworkReachabilityManager")
+@interface NetworkReachabilityManager : NSObject
+/// To manage just one instance of this class
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NetworkReachabilityManager * _Nonnull sharedInstance;)
++ (NetworkReachabilityManager * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+/// Init class and start monitoring network
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+/// If no active network return false
+///
+/// returns:
+/// true or false
+- (BOOL)isNoNetwork SWIFT_WARN_UNUSED_RESULT;
+- (UIView * _Nonnull)createErrorView SWIFT_WARN_UNUSED_RESULT;
+/// Show the error view for no connection under the nav bar
+- (void)showErrorConnectionViewWithParentView:(UIView * _Nonnull)parentView;
+/// Hide the no connection view with animation to slide up
+- (void)hideErrorConnectionView;
+@end
+
 @class UIEvent;
 @class UIScrollView;
 
@@ -949,8 +956,6 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 - (void)didSelectBackButton;
 /// Full screen button action.
 - (void)didSelectFullScreenButton;
-/// Crhomecast button action.
-- (void)didSelectCrhomecastButton;
 /// Orientation changed action.
 - (void)orientationChanged;
 - (void)remoteControlReceivedWithEvent:(UIEvent * _Nullable)event;
@@ -1015,14 +1020,19 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 
 @interface PlayListViewController (SWIFT_EXTENSION(Mobicast))
 - (UIViewController * _Nonnull)chromecastManagerGetRootViewController:(NSObject * _Nonnull)chromecastManager SWIFT_WARN_UNUSED_RESULT;
-- (void)chromecastManagerShowCastButton:(NSObject * _Nonnull)chromecastManager buttonStateEnabled:(BOOL)buttonStateEnabled;
-- (void)chromecastManagerHideCastButton:(NSObject * _Nonnull)chromecastManager;
 - (ChromecastVideoItem * _Nullable)chromecastManagerGetVideoInformation:(NSObject * _Nonnull)chromecastManager SWIFT_WARN_UNUSED_RESULT;
+- (void)chromecastManagerStartOfDeviceSelection:(NSObject * _Nonnull)chromecastManager;
 - (void)chromecastManagerStartLoadingVideo:(NSObject * _Nonnull)chromecastManager;
 - (void)chromecastManagerChangedStatusToPlaying:(NSObject * _Nonnull)chromecastManager currentTime:(double)currentTime duration:(double)duration isAdPlaying:(BOOL)isAdPlaying;
+- (void)chromecastManagerChangedStatusToPaused:(NSObject * _Nonnull)chromecastManager isAdPlaying:(BOOL)isAdPlaying;
 - (void)chromecastManagerChangedStatusToStopped:(NSObject * _Nonnull)chromecastManager isAdPlaying:(BOOL)isAdPlaying;
 - (void)chromecastManagerChangedStatusToLoadable:(NSObject * _Nonnull)chromecastManager;
 - (void)chromecastManagerEndPalyingVideo:(NSObject * _Nonnull)chromecastManager;
+@end
+
+
+@interface UIApplication (SWIFT_EXTENSION(Mobicast))
++ (UIViewController * _Nullable)topViewControllerWithController:(UIViewController * _Nullable)controller SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1111,7 +1121,7 @@ SWIFT_CLASS("_TtC8Mobicast9VideoItem")
 ///
 /// returns:
 /// Array of VideoItems
-+ (NSArray<VideoItem *> * _Nonnull)convertRawDictionaryToVideoItemsWithRawVideoItems:(NSArray * _Nonnull)rawVideoItems topVideo:(NSDictionary<NSString *, id> * _Nullable)topVideo SWIFT_WARN_UNUSED_RESULT;
++ (NSArray<VideoItem *> * _Nonnull)convertRawDictionaryToVideoItemsWithRawVideoItems:(NSArray * _Nullable)rawVideoItems topVideo:(NSDictionary<NSString *, id> * _Nullable)topVideo SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
 
