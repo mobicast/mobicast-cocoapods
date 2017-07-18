@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,38 +23,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93I-BA-QIP">
-                                <rect key="frame" x="49" y="177.5" width="277.5" height="98.5"/>
+                                <rect key="frame" x="46" y="178.5" width="283" height="97"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreenWhitePlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-Mg-Rgv">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-Mg-Rgv">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="97"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M O B I C A S T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYR-SC-tdK">
-                                        <rect key="frame" x="54" y="1.5" width="223.5" height="37"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="31"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The home of great video" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVd-aR-FTU">
-                                        <rect key="frame" x="16" y="72" width="247.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
-                                        <color key="textColor" red="0.63529411764705879" green="0.80784313725490198" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.73333333329999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="mgj-Mg-Rgv" firstAttribute="leading" secondItem="93I-BA-QIP" secondAttribute="leading" id="aj8-g1-rcs"/>
-                                    <constraint firstItem="EVd-aR-FTU" firstAttribute="top" secondItem="mgj-Mg-Rgv" secondAttribute="bottom" constant="32" id="eXE-ud-XSJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="EVd-aR-FTU" secondAttribute="bottom" id="kp4-3a-P1T"/>
-                                    <constraint firstItem="OYR-SC-tdK" firstAttribute="leading" secondItem="mgj-Mg-Rgv" secondAttribute="trailing" constant="10" id="mdQ-qZ-PyC"/>
-                                    <constraint firstAttribute="trailing" secondItem="OYR-SC-tdK" secondAttribute="trailing" id="pIc-jT-aGh"/>
-                                    <constraint firstItem="mgj-Mg-Rgv" firstAttribute="top" secondItem="93I-BA-QIP" secondAttribute="top" id="pKI-BR-Z6o"/>
-                                    <constraint firstItem="OYR-SC-tdK" firstAttribute="centerY" secondItem="mgj-Mg-Rgv" secondAttribute="centerY" id="seV-zN-5cD"/>
-                                    <constraint firstItem="EVd-aR-FTU" firstAttribute="centerX" secondItem="93I-BA-QIP" secondAttribute="centerX" constant="1.25" id="wpo-YD-seV"/>
+                                    <constraint firstAttribute="bottom" secondItem="mgj-Mg-Rgv" secondAttribute="bottom" id="WGy-07-AIm"/>
+                                    <constraint firstItem="mgj-Mg-Rgv" firstAttribute="top" secondItem="93I-BA-QIP" secondAttribute="top" id="XBT-kc-eQU"/>
+                                    <constraint firstItem="mgj-Mg-Rgv" firstAttribute="leading" secondItem="93I-BA-QIP" secondAttribute="leading" id="iFQ-TS-7W2"/>
+                                    <constraint firstAttribute="trailing" secondItem="mgj-Mg-Rgv" secondAttribute="trailing" id="ueh-WB-IjW"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.57647058823529407" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.57599999999999996" blue="0.93300000000000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="93I-BA-QIP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EOz-w6-Xgg"/>
                             <constraint firstItem="93I-BA-QIP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="100/147" id="jro-q0-kYK"/>
@@ -67,6 +53,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splashScreenWhitePlayIcon" width="44" height="40"/>
+        <image name="lunchLogo" width="283" height="97"/>
     </resources>
+    <color key="tintColor" red="0.73333333329999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -9,6 +9,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Boot Page View Controller-->
         <scene sceneID="fJb-NL-EO7">
@@ -23,51 +28,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sN-60-Lr7">
-                                <rect key="frame" x="49" y="177.5" width="277.5" height="98.5"/>
+                                <rect key="frame" x="46" y="178.5" width="283" height="97.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreenWhitePlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="R0p-3Y-qlI">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="R0p-3Y-qlI">
+                                        <rect key="frame" x="0.0" y="0.5" width="283" height="97"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M O B I C A S T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPz-Nu-N3I">
-                                        <rect key="frame" x="54" y="1.5" width="223.5" height="37"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="31"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The home of great video" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lf-vu-Mwy">
-                                        <rect key="frame" x="16" y="72" width="247.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
-                                        <color key="textColor" red="0.63529411759999999" green="0.80784313730000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="R0p-3Y-qlI" firstAttribute="top" secondItem="7sN-60-Lr7" secondAttribute="top" id="0u8-uT-lif"/>
-                                    <constraint firstItem="0Lf-vu-Mwy" firstAttribute="top" secondItem="R0p-3Y-qlI" secondAttribute="bottom" constant="32" id="2ro-Mq-zzH"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Lf-vu-Mwy" secondAttribute="bottom" id="5kV-xb-odS"/>
-                                    <constraint firstItem="R0p-3Y-qlI" firstAttribute="leading" secondItem="7sN-60-Lr7" secondAttribute="leading" id="IwR-9f-q5j"/>
-                                    <constraint firstItem="0Lf-vu-Mwy" firstAttribute="centerX" secondItem="7sN-60-Lr7" secondAttribute="centerX" constant="1.25" id="Kme-R9-5AX"/>
-                                    <constraint firstItem="QPz-Nu-N3I" firstAttribute="leading" secondItem="R0p-3Y-qlI" secondAttribute="trailing" constant="10" id="Nbc-Dp-E0r"/>
-                                    <constraint firstAttribute="trailing" secondItem="QPz-Nu-N3I" secondAttribute="trailing" id="e9J-ra-nNV"/>
-                                    <constraint firstItem="QPz-Nu-N3I" firstAttribute="centerY" secondItem="R0p-3Y-qlI" secondAttribute="centerY" id="rT0-I8-ezR"/>
+                                    <constraint firstItem="R0p-3Y-qlI" firstAttribute="leading" secondItem="7sN-60-Lr7" secondAttribute="leading" id="Fk1-Zx-RsX"/>
+                                    <constraint firstAttribute="trailing" secondItem="R0p-3Y-qlI" secondAttribute="trailing" id="Vtp-bR-wZU"/>
+                                    <constraint firstAttribute="bottom" secondItem="R0p-3Y-qlI" secondAttribute="bottom" id="WYV-gn-Yzp"/>
+                                    <constraint firstItem="R0p-3Y-qlI" firstAttribute="top" secondItem="7sN-60-Lr7" secondAttribute="top" id="nGi-7O-lbK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6w-vA-NSw">
-                                <rect key="frame" x="0.0" y="275.5" width="375" height="391"/>
+                                <rect key="frame" x="0.0" y="275.5" width="375" height="391.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5n-uJ-ApO">
-                                        <rect key="frame" x="50" y="166.5" width="275" height="96.5"/>
+                                        <rect key="frame" x="50" y="168" width="275" height="95"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreenTranslucentPlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="eXh-F3-Uug">
-                                                <rect key="frame" x="108" y="0.5" width="58" height="53"/>
+                                                <rect key="frame" x="107" y="0.5" width="60" height="56"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreenOutlineForTranslucentPlayIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uxY-mI-LM2">
-                                                <rect key="frame" x="108" y="0.0" width="58" height="53"/>
+                                                <rect key="frame" x="107" y="0.0" width="60" height="56"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-Qi-GkL">
-                                                <rect key="frame" x="92.5" y="71.5" width="90" height="25.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <rect key="frame" x="98" y="74.5" width="79.5" height="21"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" red="0.46666666670000001" green="0.72549019609999998" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -92,7 +81,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.57599999999999996" blue="0.93300000000000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.57599999999999996" blue="0.93300000000000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x6w-vA-NSw" secondAttribute="trailing" id="DCO-kG-qhD"/>
                             <constraint firstItem="7sN-60-Lr7" firstAttribute="centerX" secondItem="hcZ-mO-DP5" secondAttribute="centerX" id="IX8-ga-pBT"/>
@@ -121,8 +111,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splashScreenOutlineForTranslucentPlayIcon" width="58" height="53"/>
-        <image name="splashScreenTranslucentPlayIcon" width="58" height="53"/>
-        <image name="splashScreenWhitePlayIcon" width="44" height="40"/>
+        <image name="lunchLogo" width="283" height="97"/>
+        <image name="splashScreenOutlineForTranslucentPlayIcon" width="60" height="56"/>
+        <image name="splashScreenTranslucentPlayIcon" width="60" height="56"/>
     </resources>
 </document>

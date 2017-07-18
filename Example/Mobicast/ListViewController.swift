@@ -14,6 +14,8 @@ class ListViewController: UIViewControllerExtension, UITableViewDelegate, UITabl
 
         // Do any additional setup after loading the view.
 
+        UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.fade)
+
         setupTableViewData()
     }
 
