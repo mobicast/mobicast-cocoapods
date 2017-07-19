@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
-s.version          = '1.1.9'
+s.version          = '1.1.10'
 s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
