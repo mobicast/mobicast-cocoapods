@@ -412,6 +412,7 @@ SWIFT_CLASS("_TtC8Mobicast17ChromecastManager")
 @property (nonatomic) BOOL castStreamPlaying;
 @property (nonatomic) NSTimeInterval castMediaDuration;
 @property (nonatomic, readonly, copy) NSString * _Nonnull kTestAppAdTagUrlWithSkip;
++ (void)setup;
 - (void)initDeviceScanner SWIFT_METHOD_FAMILY(none);
 - (UIBarButtonItem * _Nonnull)getCastBarButtonItem SWIFT_WARN_UNUSED_RESULT;
 - (void)volumeControl;
@@ -881,22 +882,20 @@ SWIFT_CLASS("_TtC8Mobicast12MobiAvPlayer")
 
 @class UIImage;
 
-SWIFT_CLASS("_TtC8Mobicast14MobicastPublic")
-@interface MobicastPublic : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull MCSplashScreenWhitePlayIcon;)
-+ (UIImage * _Nonnull)MCSplashScreenWhitePlayIcon SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull MCBackButtonIcon;)
-+ (UIImage * _Nonnull)MCBackButtonIcon SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 SWIFT_CLASS("_TtC8Mobicast11MobicastSDK")
 @interface MobicastSDK : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isConnectedToNetwork;)
 + (BOOL)isConnectedToNetwork SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsConnectedToNetwork:(BOOL)value;
+/// Initialize the SDK
+/// This should be called at the start of the appdelegate
 + (void)setup;
+/// The white play icon.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull MCSplashScreenWhitePlayIcon;)
++ (UIImage * _Nonnull)MCSplashScreenWhitePlayIcon SWIFT_WARN_UNUSED_RESULT;
+/// The back icon.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _Nonnull MCBackButtonIcon;)
++ (UIImage * _Nonnull)MCBackButtonIcon SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
