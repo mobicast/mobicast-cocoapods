@@ -524,6 +524,10 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 /// @param playerToken Player token.
 /// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
 - (nonnull instancetype)initWithDiscoveryPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
+/// Get DiscoveryPlaylistViewController.
+/// @param playerToken Player token.
+/// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
+- (nonnull instancetype)initWithDiscoveryPlaylistWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull, void (^ _Nonnull)(NSArray * _Nullable, NSString * _Nullable, NSString * _Nullable)))completionHandler;
 /// Get PlaylistViewController.
 /// @param playerToken Player token.
 /// @param completionHandler Completion handler which returns PlayListViewController instance
@@ -634,6 +638,11 @@ SWIFT_CLASS("_TtC8Mobicast31DiscoveryPlaylistViewController")
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
+/// Set up a playlist with an array of videos, widget id and ad tag.
+/// @param videosList An array of videos.
+/// @param widgetId Playlist id.
+/// @param adtag Link for ad.
+- (void)setupPlaylistWithVideosList:(NSArray * _Nullable)videosList widgetId:(NSString * _Nullable)widgetId adtag:(NSString * _Nullable)adtag;
 - (void)didSelectMoreButton;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
@@ -900,6 +909,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIImage * _N
 @end
 
 
+@class NSNumber;
 
 SWIFT_CLASS("_TtC8Mobicast17NetworkAPIManager")
 @interface NetworkAPIManager : NSObject
@@ -932,6 +942,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NetworkAPIMa
 /// @param url URL of videos.
 /// @param complete Complete block.
 - (void)getVideosListWithUrl:(NSURL * _Nonnull)url complete:(void (^ _Nonnull)(id _Nullable, BOOL))complete;
+/// Get list of related videos for video with id.
+/// @param tag videoId.
+/// @param complete Complete block.
+- (void)getRelatedVideosListWithVideoId:(NSNumber * _Nonnull)videoId complete:(void (^ _Nonnull)(id _Nullable, BOOL))complete;
 /// Get list of videos with tag.
 /// @param tag Tag of videos.
 /// @param complete Complete block.
@@ -980,6 +994,7 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @property (nonatomic, copy) NSString * _Nullable adtag;
 @property (nonatomic, copy) NSString * _Nullable widgetId;
 @property (nonatomic, copy) NSString * _Nullable videoTag;
+@property (nonatomic, strong) NSNumber * _Nullable videoId;
 @property (nonatomic, copy) NSString * _Nullable playerToken;
 /// <ul>
 ///   <li>
@@ -1042,9 +1057,10 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 /// @param selectedVideoIndex The index of the selected video.
 - (void)setupPlaylistWithVideosList:(NSArray * _Nullable)videosList widgetId:(NSString * _Nullable)widgetId selectedVideoIndex:(NSInteger)selectedVideoIndex adtag:(NSString * _Nullable)adtag;
 /// Set up a playlist with an array of videos and the index of the selected video.
-/// @param videosList An array of videos.
-/// @param selectedVideoIndex The index of the selected video.
-- (void)setupPlaylistWithVideoTag:(NSString * _Nullable)videoTag widgetId:(NSString * _Nullable)widgetId adtag:(NSString * _Nullable)adtag;
+/// @param videoTag - tag of selected video.
+/// @param widgetId The api player id of the playlist
+/// @param adTag - tag for ads.
+- (void)setupPlaylistWithVideoId:(NSNumber * _Nullable)videoId videoTag:(NSString * _Nullable)videoTag widgetId:(NSString * _Nullable)widgetId adtag:(NSString * _Nullable)adtag;
 - (void)setSelectedVideoWithVideo:(NSDictionary<NSString *, id> * _Nullable)video;
 /// Start paying video in cell.
 /// @param indexPath The index path of the cell.
@@ -1590,25 +1606,6 @@ SWIFT_CLASS("_TtC8Mobicast18VideoTableViewCell")
 - (void)setupAirplayState;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSNotification;
-
-SWIFT_CLASS("_TtC8Mobicast7Volumer")
-@interface Volumer : NSObject
-@property (nonatomic, copy) void (^ _Nullable block)(float);
-/// Setup with volume value and block with change volume action.
-/// @param volumeValue Volume value.
-/// @param block Change volume action.
-- (void)setupWithVolumeValue:(float)volumeValue :(void (^ _Nonnull)(float))block;
-/// Reset.
-- (void)reset;
-/// Set MPVolumeView.
-/// @param volumeView MPVolumeView.
-- (void)setWithVolumeView:(MPVolumeView * _Nonnull)volumeView;
-/// System volume notification.
-- (void)volumeChangedWithNotification:(NSNotification * _Nonnull)notification;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop
