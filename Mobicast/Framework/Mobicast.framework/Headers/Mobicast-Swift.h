@@ -144,6 +144,16 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+
+SWIFT_CLASS("_TtC8Mobicast9AdManager")
+@interface AdManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AdManager * _Nonnull sharedInstance;)
++ (AdManager * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)checkIfNeedPlayAdWithPlaylistIdentifier:(NSString * _Nonnull)playlistIdentifier firstAd:(NSInteger)firstAd adInterval:(NSInteger)adInterval SWIFT_WARN_UNUSED_RESULT;
+- (void)removeCounterWithPlaylistIdentifier:(NSString * _Nonnull)playlistIdentifier;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSTextCheckingResult;
 
 SWIFT_CLASS("_TtC8Mobicast11AdTagHelper")
@@ -237,6 +247,8 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 @interface VideoPlayerManager : NSObject
 /// Block for playing the next video.
 @property (nonatomic, copy) void (^ _Nonnull playNextVideo)(void);
+/// Block for playing the previous video.
+@property (nonatomic, copy) void (^ _Nonnull playPreviousVideo)(void);
 /// Block for playing the current video.
 @property (nonatomic, copy) void (^ _Nonnull playCurrentVideo)(void);
 /// Block for preparing the next video.
@@ -273,6 +285,7 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 @property (nonatomic, copy) void (^ _Nonnull fullscreenModeChangeFinished)(void);
 @property (nonatomic, copy) BOOL (^ _Nonnull isThisCellIsActive)(void);
 @property (nonatomic, copy) NSString * _Nullable (^ _Nonnull getAdTag)(void);
+@property (nonatomic, copy) NSString * _Nonnull (^ _Nonnull getPlaylistIdentifier)(void);
 @property (nonatomic, copy) void (^ _Nonnull closeFullScreen)(BOOL);
 /// Content views.
 @property (nonatomic, strong) VideoPlayerContentViews * _Null_unspecified videoPlayerContentViews;
@@ -510,6 +523,9 @@ SWIFT_CLASS("_TtC8Mobicast13DiscoveryData")
 /// Load the list of playlists.
 /// @param complete Complete block.
 + (void)loadPlaylistsWithComplete:(void (^ _Nonnull)(NSArray * _Nullable))complete;
+/// Load the recent playlist.
+/// @param complete Complete block.
++ (void)loadRecentPlaylistWithComplete:(void (^ _Nonnull)(NSArray * _Nullable))complete;
 @end
 
 
@@ -524,10 +540,6 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 /// @param playerToken Player token.
 /// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
 - (nonnull instancetype)initWithDiscoveryPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
-/// Get DiscoveryPlaylistViewController.
-/// @param playerToken Player token.
-/// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
-- (nonnull instancetype)initWithDiscoveryPlaylistWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull, void (^ _Nonnull)(NSArray * _Nullable, NSString * _Nullable, NSString * _Nullable)))completionHandler;
 /// Get PlaylistViewController.
 /// @param playerToken Player token.
 /// @param completionHandler Completion handler which returns PlayListViewController instance
@@ -644,6 +656,8 @@ SWIFT_CLASS("_TtC8Mobicast31DiscoveryPlaylistViewController")
 /// @param adtag Link for ad.
 - (void)setupPlaylistWithVideosList:(NSArray * _Nullable)videosList widgetId:(NSString * _Nullable)widgetId adtag:(NSString * _Nullable)adtag;
 - (void)didSelectMoreButton;
+/// Create an activity indicator view.
+- (void)startActivityIndicatorView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
@@ -849,6 +863,8 @@ SWIFT_CLASS("_TtC8Mobicast23LocalVideoPlayerManager")
 - (void)videoPlayerControlPanelDidTouchUpSlider:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue;
 - (void)videoPlayerControlPanel:(UIView * _Nonnull)videoPlayerControlPanel rewindVideoAt:(float)rewindVideoAt;
 - (float)videoPlayerControlPanelGetVideoDuration:(UIView * _Nonnull)videoPlayerControlPanel SWIFT_WARN_UNUSED_RESULT;
+- (void)videoPlayerControlPanelStartNextVideo:(UIView * _Nonnull)videoPlayerControlPanel;
+- (void)videoPlayerControlPanelStartPreviousVideo:(UIView * _Nonnull)videoPlayerControlPanel;
 - (nonnull instancetype)initWithVideoItem:(VideoItem * _Nonnull)withVideoItem withRootController:(UIViewController * _Nonnull)withRootController withVideoViews:(VideoPlayerContentViews * _Nonnull)withVideoViews OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -957,6 +973,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NetworkAPIMa
 /// @param playerToken Player token.
 /// @param complete Complete block.
 - (void)getPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken complete:(void (^ _Nonnull)(id _Nullable, BOOL))complete;
+/// Get Recent videos with.
+/// @param complete Complete block.
+- (void)getRecentPlaylistWithComplete:(void (^ _Nonnull)(id _Nullable, BOOL))complete;
 - (void)postLikeForVideoWithUuid:(NSString * _Nonnull)uuid widgetId:(NSString * _Nullable)widgetId videoid:(NSString * _Nonnull)videoid;
 /// show a network error view to the user
 - (void)showNetworkErrorView;
@@ -1280,6 +1299,7 @@ SWIFT_PROTOCOL("_TtP8Mobicast40VideoPlayerTouchesControllerViewDelegate_")
 - (void)videoPlayerTouchesControllerViewDidTapOnView:(UIView * _Nonnull)videoPlayerTouchesControllerView;
 @end
 
+@class UISwipeGestureRecognizer;
 @class UISlider;
 @class MPVolumeView;
 @class VideoPlayerTouchesControllerView;
@@ -1290,6 +1310,8 @@ SWIFT_PROTOCOL("_TtP8Mobicast40VideoPlayerTouchesControllerViewDelegate_")
 SWIFT_CLASS("_TtC8Mobicast23VideoPlayerControlPanel")
 @interface VideoPlayerControlPanel : UIView <VideoPlayerTouchesControllerViewDelegate>
 @property (nonatomic, strong) UIButton * _Null_unspecified tapOnVideoButton;
+@property (nonatomic, strong) UISwipeGestureRecognizer * _Null_unspecified swipeRight;
+@property (nonatomic, strong) UISwipeGestureRecognizer * _Null_unspecified swipeLeft;
 @property (nonatomic, strong) UIView * _Null_unspecified controlPanel;
 @property (nonatomic, strong) UIButton * _Null_unspecified playPauseButton;
 @property (nonatomic, strong) UIImageView * _Null_unspecified playPauseShapeImage;
@@ -1316,6 +1338,7 @@ SWIFT_CLASS("_TtC8Mobicast23VideoPlayerControlPanel")
 @property (nonatomic, strong) NSTimer * _Nullable sliderTimer;
 @property (nonatomic, strong) NSLayoutConstraint * _Null_unspecified airplayButtonWidthConstraint;
 @property (nonatomic) BOOL turnOffDelegate;
+@property (nonatomic) BOOL isFullScreenEnabled;
 /// Setup view with views count, likes count and next video name.
 /// @param viewsCount Views count.
 /// @param likesCount Likes count.
@@ -1344,6 +1367,8 @@ SWIFT_CLASS("_TtC8Mobicast23VideoPlayerControlPanel")
 - (void)setupToucesControllerView;
 /// TapOnVideoButton action.
 - (void)didTapOnVideoButton:(UIButton * _Nonnull)sender;
+/// TapOnVideoButton action.
+- (void)didSwipeOnVideoButton:(UISwipeGestureRecognizer * _Nonnull)recognizer;
 /// PlayPauseButton action.
 - (void)didSelectPlayButton:(UIButton * _Nonnull)sender;
 /// VideoSlider thumb touch down action.
@@ -1528,6 +1553,8 @@ SWIFT_CLASS("_TtC8Mobicast33VideoPlayerInfoPanelLandscapeMode")
 - (void)videoPlayerControlPanelExitFullScreenMode:(UIView * _Nonnull)videoPlayerControlPanel;
 - (BOOL)videoPlayerControlPanelIsVideoPlaying:(UIView * _Nonnull)videoPlayerControlPanel SWIFT_WARN_UNUSED_RESULT;
 - (void)videoPlayerControlPanel:(UIView * _Nonnull)videoPlayerControlPanel rewindVideoAt:(float)rewindVideoAt;
+- (void)videoPlayerControlPanelStartNextVideo:(UIView * _Nonnull)videoPlayerControlPanel;
+- (void)videoPlayerControlPanelStartPreviousVideo:(UIView * _Nonnull)videoPlayerControlPanel;
 @end
 
 
