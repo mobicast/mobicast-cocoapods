@@ -92,12 +92,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.framework"
   install_framework "${PODS_ROOT}/../../Mobicast/Framework/Mobicast.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PullToRefreshSwift/PullToRefreshSwift.framework"
   install_framework "${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-Public-3.5.0-Release/GoogleCast.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.framework"
   install_framework "${PODS_ROOT}/../../Mobicast/Framework/Mobicast.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PullToRefreshSwift/PullToRefreshSwift.framework"
   install_framework "${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-Public-3.5.0-Release/GoogleCast.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

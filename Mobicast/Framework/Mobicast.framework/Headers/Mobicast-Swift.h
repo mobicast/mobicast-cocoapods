@@ -237,7 +237,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AirplayMirro
 @end
 
 @class VideoPlayerContentViews;
-@class MobiAvPlayer;
+@class MobicastAvPlayer;
 @class AVPlayerLayer;
 @class UIViewController;
 @class ImaAdsManager;
@@ -290,7 +290,7 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 /// Content views.
 @property (nonatomic, strong) VideoPlayerContentViews * _Null_unspecified videoPlayerContentViews;
 /// Video Player variables
-@property (nonatomic, strong) MobiAvPlayer * _Nullable avPlayer;
+@property (nonatomic, strong) MobicastAvPlayer * _Nullable avPlayer;
 @property (nonatomic, strong) AVPlayerLayer * _Nullable avPlayerLayer;
 /// Variable with the status of video playback.
 @property (nonatomic) BOOL isPlaying;
@@ -538,13 +538,21 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 @interface DiscoveryPlaylist (SWIFT_EXTENSION(Mobicast))
 /// Get DiscoveryPlaylistViewController.
 /// @param playerToken Player token.
+/// @param updateDataFromServerHandler Handler for call update data from server method with callback
 /// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
 - (nonnull instancetype)initWithDiscoveryPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
+/// Get DiscoveryPlaylistViewController.
+/// @param playerToken Player token.
+/// @param updateDataFromServerHandler Handler for call update data from server method with callback
+/// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
+- (nonnull instancetype)initWithDiscoveryPlaylistWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull, void (^ _Nonnull)(NSArray * _Nullable, NSString * _Nullable, NSString * _Nullable)))completionHandler;
 /// Get PlaylistViewController.
 /// @param playerToken Player token.
+/// @param updateDataFromServerHandler Handler for call update data from server method with callback
 /// @param completionHandler Completion handler which returns PlayListViewController instance
 - (nonnull instancetype)initWithPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken autoplayEnabled:(BOOL)autoplayEnabled completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
 /// Get PlaylistViewController.
+/// @param updateDataFromServerHandler Handler for call update data from server method with callback
 /// @param completionHandler Completion handler which returns
 /// <ul>
 ///   <li>
@@ -645,6 +653,8 @@ SWIFT_CLASS("_TtC8Mobicast25UIViewControllerExtension")
 
 SWIFT_CLASS("_TtC8Mobicast31DiscoveryPlaylistViewController")
 @interface DiscoveryPlaylistViewController : UIViewControllerExtension <UITableViewDataSource, UITableViewDelegate>
+/// Method for refresh data with completion handler
+@property (nonatomic, copy) void (^ _Nullable updateDataFromServerHandler)(void (^ _Nonnull)(void));
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
@@ -685,22 +695,6 @@ SWIFT_CLASS("_TtC8Mobicast15DiscoveryWidget")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
-@class UITouch;
-@class UIEvent;
-
-SWIFT_CLASS("_TtC8Mobicast9ErrorView")
-@interface ErrorView : UIView
-/// Block for after view has been touched
-@property (nonatomic, copy) void (^ _Nonnull errorViewDisappeared)(void);
-/// build an error view for failed api calls
-/// \param frame frame size
-///
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
 
 SWIFT_CLASS("_TtC8Mobicast29ExtensionNavigationController")
 @interface ExtensionNavigationController : UINavigationController
@@ -717,20 +711,21 @@ SWIFT_CLASS("_TtC8Mobicast29ExtensionNavigationController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UICollectionView;
 
-SWIFT_CLASS("_TtC8Mobicast16FullScreenButton")
-@interface FullScreenButton : UIButton
-/// create big hit area on the button
-/// \param point point
-///
-/// \param event event
-///
-///
-/// returns:
-/// the view
-- (UIView * _Nullable)hitTest:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC8Mobicast22HorizontalPlaylistView")
+@interface HorizontalPlaylistView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)setupTitleViewWithTitle:(NSString * _Nonnull)title;
+- (void)setupPlayListDataWithPlayListData:(NSArray * _Nullable)playListData;
+- (void)hideSeparatorAndRemoveBottomIndentWithHideAndRemove:(BOOL)hideAndRemove;
+- (void)hideCollectionViewWithHide:(BOOL)hide;
+- (void)selectedItemActionWithAction:(void (^ _Nonnull)(NSInteger, NSArray * _Nonnull))action;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 @class IMAAVPlayerContentPlayhead;
@@ -856,7 +851,7 @@ SWIFT_CLASS("_TtC8Mobicast23LocalVideoPlayerManager")
 ///
 - (void)videoPlayerControlPanelDidSelectPlayButton:(UIView * _Nonnull)videoPlayerControlPanel;
 /// show controls if tap on local video - do nothing if in airplay as controls always show
-/// \param videoPlayerControlPanel <#videoPlayerControlPanel description#>
+/// \param videoPlayerControlPanel control panel
 ///
 - (void)videoPlayerControlPanelDidTapOnVideoButton:(UIView * _Nonnull)videoPlayerControlPanel;
 - (void)videoPlayerControlPanelDidTouchDownSlider:(UIView * _Nonnull)videoPlayerControlPanel;
@@ -878,8 +873,8 @@ SWIFT_CLASS("_TtC8Mobicast22MANavBarTitleViewClass")
 
 @class AVPlayerItem;
 
-SWIFT_CLASS("_TtC8Mobicast12MobiAvPlayer")
-@interface MobiAvPlayer : AVPlayer
+SWIFT_CLASS("_TtC8Mobicast16MobicastAvPlayer")
+@interface MobicastAvPlayer : AVPlayer
 /// Block for playing the next video.
 @property (nonatomic, copy) void (^ _Nonnull stopAndPrepareVideo)(void);
 /// Block for playing the next video.
@@ -905,7 +900,40 @@ SWIFT_CLASS("_TtC8Mobicast12MobiAvPlayer")
 - (void)addPeriodicObserverForVideo;
 @end
 
+@class UIEvent;
 @class UIImage;
+
+SWIFT_CLASS("_TtC8Mobicast14MobicastButton")
+@interface MobicastButton : UIButton
+/// create big hit area on the button
+/// \param point point
+///
+/// \param event event
+///
+///
+/// returns:
+/// the view
+- (UIView * _Nullable)hitTest:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)setImage:(UIImage * _Nullable)image forState:(UIControlState)state;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITouch;
+
+SWIFT_CLASS("_TtC8Mobicast17MobicastErrorView")
+@interface MobicastErrorView : UIView
+/// Block for after view has been touched
+@property (nonatomic, copy) void (^ _Nonnull errorViewDisappeared)(void);
+/// build an error view for failed api calls
+/// \param frame frame size
+///
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC8Mobicast11MobicastSDK")
 @interface MobicastSDK : NSObject
@@ -939,7 +967,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NetworkAPIMa
 @property (nonatomic, readonly, copy) NSString * _Nonnull httpMethodPATCH;
 @property (nonatomic, readonly, copy) NSString * _Nonnull hostPlatform;
 @property (nonatomic, readonly, copy) NSString * _Nonnull hostTrack;
-@property (nonatomic, strong) ErrorView * _Nullable errorView;
+@property (nonatomic, strong) MobicastErrorView * _Nullable errorView;
 @property (nonatomic) BOOL errorViewShowing;
 @property (nonatomic, copy) NSArray<NSString *> * _Nullable listOfPlaylistsStorage;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull listOfPlaylists;
@@ -977,6 +1005,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NetworkAPIMa
 /// @param complete Complete block.
 - (void)getRecentPlaylistWithComplete:(void (^ _Nonnull)(id _Nullable, BOOL))complete;
 - (void)postLikeForVideoWithUuid:(NSString * _Nonnull)uuid widgetId:(NSString * _Nullable)widgetId videoid:(NSString * _Nonnull)videoid;
+/// Get rich playlist.
+/// @param complete Complete block.
+- (void)getRichPlaylistWithComplete:(void (^ _Nonnull)(id _Nullable, BOOL))complete;
 /// show a network error view to the user
 - (void)showNetworkErrorView;
 @end
@@ -1015,6 +1046,8 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @property (nonatomic, copy) NSString * _Nullable videoTag;
 @property (nonatomic, strong) NSNumber * _Nullable videoId;
 @property (nonatomic, copy) NSString * _Nullable playerToken;
+/// Method for refresh data with completion handler
+@property (nonatomic, copy) void (^ _Nullable updateDataFromServerHandler)(void (^ _Nonnull)(void));
 /// <ul>
 ///   <li>
 ///     The index of the cell which is now active.
@@ -1047,7 +1080,7 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 /// Variable to store the status of changing the orientation at the current time.
 @property (nonatomic) BOOL isChangesOrientation;
 @property (nonatomic, strong) ChromecastManager * _Null_unspecified chromecastManager;
-/// Seleted video on previous page.
+/// Seleсted video on previous page.
 @property (nonatomic, copy) NSDictionary<NSString *, id> * _Nullable topVideo;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -1068,6 +1101,7 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 - (void)setupChromecastManager;
 /// Reload data
 - (void)showData;
+- (void)updateDataFromServer;
 - (void)totalReloadData;
 /// Create table view for a display video playlist.
 - (void)setupTableView;
@@ -1141,6 +1175,42 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @end
 
 
+SWIFT_CLASS("_TtC8Mobicast12RichPlaylist")
+@interface RichPlaylist : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface RichPlaylist (SWIFT_EXTENSION(Mobicast))
+/// Show a new video list in a parent navigation controller.
+/// @param navigationController Navigation controller where the preview video list will be displayed.
+- (nonnull instancetype)initWithShowInNavigationController:(UINavigationController * _Nonnull)navigationController;
+@end
+
+
+SWIFT_CLASS("_TtC8Mobicast16RichPlaylistCell")
+@interface RichPlaylistCell : UITableViewCell
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (void)setupCellWithTitle:(NSString * _Nonnull)title videosList:(NSArray * _Nullable)videosList action:(void (^ _Nonnull)(NSInteger))action;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8Mobicast26RichPlaylistViewController")
+@interface RichPlaylistViewController : UIViewControllerExtension <UITableViewDataSource, UITableViewDelegate>
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+/// Create an activity indicator view.
+- (void)startActivityIndicatorView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 @interface UIApplication (SWIFT_EXTENSION(Mobicast))
 + (UIViewController * _Nullable)topViewControllerWithController:(UIViewController * _Nullable)controller SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -1154,13 +1224,10 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @interface UIFont (SWIFT_EXTENSION(Mobicast))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull mobicastSDKFont;)
 + (NSString * _Nonnull)mobicastSDKFont SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull mobicastSDKMediumFont;)
++ (NSString * _Nonnull)mobicastSDKMediumFont SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull mobicastSDKBoldFont;)
 + (NSString * _Nonnull)mobicastSDKBoldFont SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat defaultFontWeightLevel3;)
-+ (CGFloat)defaultFontWeightLevel3 SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) CGFloat defaultFontWeightLevel2;)
-+ (CGFloat)defaultFontWeightLevel2 SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nonnull)getAppFontWithSize:(CGFloat)size weight:(CGFloat)weight SWIFT_WARN_UNUSED_RESULT;
 /// load all custom fonts - cannot use info.plist as this is a .framework
 + (void)loadFonts;
 @end
@@ -1232,15 +1299,7 @@ SWIFT_CLASS("_TtC8Mobicast9VideoItem")
 /// \param nextVideoItemDictionary next dictionary item in the array - next video to play
 ///
 - (nonnull instancetype)initWithVideoItemDictionary:(NSDictionary<NSString *, id> * _Nonnull)videoItemDictionary nextVideoItemDictionary:(NSDictionary<NSString *, id> * _Nullable)nextVideoItemDictionary OBJC_DESIGNATED_INITIALIZER;
-/// Convert the raw JSON dictionary to an array of VideoItems
-/// \param rawVideoItems dictionary of raw data
-///
-/// \param topVideo dictionary of video that must be on top
-///
-///
-/// returns:
-/// Array of VideoItems
-+ (NSArray<VideoItem *> * _Nonnull)convertRawDictionaryToVideoItemsWithRawVideoItems:(NSArray * _Nullable)rawVideoItems topVideo:(NSDictionary<NSString *, id> * _Nullable)topVideo SWIFT_WARN_UNUSED_RESULT;
+- (void)setupNextVideoWithNextVideo:(id _Nullable)nextVideo;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -1320,7 +1379,7 @@ SWIFT_CLASS("_TtC8Mobicast23VideoPlayerControlPanel")
 @property (nonatomic, strong) UILabel * _Null_unspecified videoTimerRight;
 @property (nonatomic, strong) UIButton * _Null_unspecified videoAirPlayButton;
 @property (nonatomic, strong) MPVolumeView * _Null_unspecified volumeView;
-@property (nonatomic, strong) FullScreenButton * _Null_unspecified fullScreenModeOffButton;
+@property (nonatomic, strong) MobicastButton * _Null_unspecified fullScreenModeOffButton;
 @property (nonatomic, strong) VideoPlayerTouchesControllerView * _Null_unspecified videoPlayerTouchesControllerView;
 @property (nonatomic, strong) VideoPlayerInfoPanelLandscapeMode * _Null_unspecified videoPlayerInfoPanelLandscapeMode;
 @property (nonatomic, strong) NSLayoutConstraint * _Null_unspecified videoPlayerInfoPanelHeightConstraint;
@@ -1405,6 +1464,8 @@ SWIFT_CLASS("_TtC8Mobicast23VideoPlayerControlPanel")
 - (void)dimVideoForAirplay;
 /// Change control panel visibility state.
 - (void)changeControlPanelVisibilityState;
+/// Change control panel visibility state.
+- (void)changeControlPanelVisibilityStateAirplayMirroring;
 /// Change control panel visibility state.
 /// @param visible Visibility of components.
 - (void)changeControlPanelVisibilityStateWithVisible:(BOOL)visible;
