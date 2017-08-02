@@ -1182,6 +1182,13 @@ SWIFT_CLASS("_TtC8Mobicast12RichPlaylist")
 
 
 @interface RichPlaylist (SWIFT_EXTENSION(Mobicast))
+/// Get RichPlaylistViewController.
+/// @param completionHandler Completion handler which returns RichPlaylistViewController instance
+- (nonnull instancetype)initWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
+@end
+
+
+@interface RichPlaylist (SWIFT_EXTENSION(Mobicast))
 /// Show a new video list in a parent navigation controller.
 /// @param navigationController Navigation controller where the preview video list will be displayed.
 - (nonnull instancetype)initWithShowInNavigationController:(UINavigationController * _Nonnull)navigationController;
