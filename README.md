@@ -61,7 +61,8 @@ override func viewDidLoad() {
 super.viewDidLoad()
  
 discovery = DiscoveryWidget.init(showInViewController: self, playerToken:"102")
-}```
+}
+```
 
 To open the playlist in a separate window, add the code below passing the player token and referencing your navigationController.
 
@@ -74,6 +75,7 @@ super.viewDidLoad()
 discovery = DiscoveryPlaylist.init(showInNavigationController: self.navigationController!, playerToken: "102")
 }
 ```
+
 For correct work of the framework, you need to add `UIViewControllerBasedStatusBarAppearance` in your application's `Info.plist` and set it to Type: Boolean and Value: NO.
 
 ### Analytics
