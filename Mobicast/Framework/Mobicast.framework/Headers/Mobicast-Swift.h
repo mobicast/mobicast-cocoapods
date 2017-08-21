@@ -308,6 +308,7 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 @property (nonatomic, strong) VideoPlayerManager * _Null_unspecified videoPlayer;
 /// Timer counter for play next video.
 @property (nonatomic) NSInteger timerCounterForPlayNextVideo;
+@property (nonatomic, strong) NSTimer * _Nullable thumbnailLoaderTimer;
 /// Change the appearance of the play/pause button.
 - (void)setupPlayPauseButtonStatus;
 - (nonnull instancetype)initWithVideoItem:(VideoItem * _Nonnull)withVideoItem withRootController:(UIViewController * _Nonnull)withRootController withVideoViews:(VideoPlayerContentViews * _Nonnull)withVideoViews OBJC_DESIGNATED_INITIALIZER;
@@ -536,6 +537,8 @@ SWIFT_CLASS("_TtC8Mobicast22ChannelsViewController")
 @property (nonatomic, strong) UIActivityIndicatorView * _Null_unspecified activityIndicatorView;
 /// channels array
 @property (nonatomic, copy) NSArray<ChannelItem *> * _Nullable channels;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
@@ -546,8 +549,6 @@ SWIFT_CLASS("_TtC8Mobicast22ChannelsViewController")
 /// Open selected channel
 /// @param channel channel to open
 - (void)openChannelWithChannel:(ChannelItem * _Nonnull)channel;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UIActionSheet;
@@ -865,6 +866,7 @@ SWIFT_CLASS("_TtC8Mobicast15ListOfPlaylists")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class UIImage;
 
 SWIFT_CLASS("_TtC8Mobicast23LocalVideoPlayerManager")
 @interface LocalVideoPlayerManager : VideoPlayerManager
@@ -902,7 +904,7 @@ SWIFT_CLASS("_TtC8Mobicast23LocalVideoPlayerManager")
 - (void)videoPlayerControlPanelDidTapOnVideoButton:(UIView * _Nonnull)videoPlayerControlPanel;
 - (void)videoPlayerControlPanelDidTouchDownSlider:(UIView * _Nonnull)videoPlayerControlPanel;
 - (void)videoPlayerControlPanelDidTouchUpSlider:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue;
-- (void)videoPlayerControlPanelChangeThumbnailAfterSliding:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue;
+- (void)videoPlayerControlPanelGetThumbnail:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue showImmediately:(BOOL)showImmediately complition:(void (^ _Nonnull)(UIImage * _Nullable))complition;
 - (void)videoPlayerControlPanel:(UIView * _Nonnull)videoPlayerControlPanel rewindVideoAt:(float)rewindVideoAt;
 - (float)videoPlayerControlPanelGetVideoDuration:(UIView * _Nonnull)videoPlayerControlPanel SWIFT_WARN_UNUSED_RESULT;
 - (void)videoPlayerControlPanelStartNextVideo:(UIView * _Nonnull)videoPlayerControlPanel;
@@ -1048,7 +1050,6 @@ SWIFT_CLASS("_TtC8Mobicast16MobicastAvPlayer")
 @end
 
 @class UIEvent;
-@class UIImage;
 
 SWIFT_CLASS("_TtC8Mobicast14MobicastButton")
 @interface MobicastButton : UIButton
@@ -1597,10 +1598,15 @@ SWIFT_CLASS("_TtC8Mobicast23VideoPlayerControlPanel")
 @property (nonatomic, strong) NSLayoutConstraint * _Null_unspecified airplayButtonWidthConstraint;
 @property (nonatomic) BOOL turnOffDelegate;
 @property (nonatomic) BOOL isFullScreenEnabled;
+@property (nonatomic, strong) UIImageView * _Nullable sliderThumbnail;
+@property (nonatomic, strong) NSLayoutConstraint * _Nullable sliderThumbnailCenterXConstraint;
+@property (nonatomic, strong) UILabel * _Nullable thumbnailDuration;
 /// Create a button for an information about clicking on a video.
 - (void)setupTapOnVideoButton;
 /// Create a control panel.
 - (void)setupControlPanel;
+- (void)showThumbnailUnderSlider;
+- (void)hideThumbnailUnderSlider;
 - (CGFloat)airPlayButtonWidth SWIFT_WARN_UNUSED_RESULT;
 - (void)setupAirPlayButton;
 - (void)updateAirPlayDevices;
@@ -1644,14 +1650,14 @@ SWIFT_CLASS("_TtC8Mobicast33VideoPlayerControllerPanelManager")
 - (void)didSwipeOnVideoButton:(UISwipeGestureRecognizer * _Nonnull)recognizer;
 /// PlayPauseButton action.
 - (void)didSelectPlayButton:(UIButton * _Nonnull)sender;
-@property (nonatomic, strong) NSTimer * _Nullable sliderTimer;
-- (void)sliderTimerAction;
 /// VideoSlider thumb touch down action.
 - (void)didTouchDownSlider;
 /// VideoSlider thumb touch up action.
 - (void)didTouchUpSlider;
 /// VideoSlider value changed action.
 - (void)didValueChangedSlider;
+- (void)updateThumbnailWithImmediately:(BOOL)immediately;
+- (CGFloat)xPositionWithASlider:(UISlider * _Nonnull)aSlider SWIFT_WARN_UNUSED_RESULT;
 /// VideoSlider touch up action.
 - (void)sliderTappedWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer;
 /// FullScreenModeOffButton action.
@@ -1834,10 +1840,11 @@ SWIFT_CLASS("_TtC8Mobicast33VideoPlayerInfoPanelLandscapeMode")
 - (void)videoPlayerControlPanelDidTapOnVideoButton:(UIView * _Nonnull)videoPlayerControlPanel;
 - (void)videoPlayerControlPanelDidTouchDownSlider:(UIView * _Nonnull)videoPlayerControlPanel;
 - (void)videoPlayerControlPanelDidTouchUpSlider:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue;
-- (void)videoPlayerControlPanelChangeThumbnailAfterSliding:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue;
+- (void)videoPlayerControlPanelGetThumbnail:(UIView * _Nonnull)videoPlayerControlPanel sliderVulue:(float)sliderVulue showImmediately:(BOOL)showImmediately complition:(void (^ _Nonnull)(UIImage * _Nullable))complition;
 - (float)videoPlayerControlPanelGetVideoDuration:(UIView * _Nonnull)videoPlayerControlPanel SWIFT_WARN_UNUSED_RESULT;
 - (void)videoPlayerControlPanelExitFullScreenMode:(UIView * _Nonnull)videoPlayerControlPanel;
 - (BOOL)videoPlayerControlPanelIsVideoPlaying:(UIView * _Nonnull)videoPlayerControlPanel SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)videoPlayerControlPanelIsVideoSliding:(UIView * _Nonnull)videoPlayerControlPanel SWIFT_WARN_UNUSED_RESULT;
 - (void)videoPlayerControlPanel:(UIView * _Nonnull)videoPlayerControlPanel rewindVideoAt:(float)rewindVideoAt;
 - (void)videoPlayerControlPanelStartNextVideo:(UIView * _Nonnull)videoPlayerControlPanel;
 - (void)videoPlayerControlPanelStartPreviousVideo:(UIView * _Nonnull)videoPlayerControlPanel;

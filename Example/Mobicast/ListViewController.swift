@@ -6,6 +6,8 @@ class ListViewController: UIViewControllerExtension, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
 
     var discoveryPlaylist: DiscoveryPlaylist?
+    
+    var channelsList: ChannelsList?
 
     internal var tableViewData = [[String: String]]()
 
@@ -43,6 +45,10 @@ class ListViewController: UIViewControllerExtension, UITableViewDelegate, UITabl
         tableViewData.append(["type": "vertical_playlist",
                               "title": "Discovery Vertical Playlist",
                               "description": ""])
+        
+        tableViewData.append(["type": "channels",
+                              "title": "Channels",
+                              "description": ""])
 
         tableView.reloadData()
     }
@@ -77,6 +83,10 @@ class ListViewController: UIViewControllerExtension, UITableViewDelegate, UITabl
         } else if cellData["type"] == "vertical_playlist" {
 
             openDiscoveryPlayList()
+            
+        } else if cellData["type"] == "channels" {
+            
+            openChannelsList()
         }
     }
 
@@ -87,5 +97,11 @@ class ListViewController: UIViewControllerExtension, UITableViewDelegate, UITabl
         discoveryPlaylist = DiscoveryPlaylist.init(showInNavigationController: self.navigationController!, playerToken: "102")
 
         discoveryPlaylist?.isDeveloperMode = true
+    }
+    
+    func openChannelsList() {
+        
+        channelsList = ChannelsList.init(showInNavigationController: self.navigationController!)
+        
     }
 }
