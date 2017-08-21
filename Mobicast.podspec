@@ -38,7 +38,6 @@ s.frameworks = 'UIKit', 'AVFoundation'
 s.dependency 'GoogleAds-IMA-iOS-SDK', '3.5.2'
 s.dependency 'google-cast-sdk', '3.5.0'
 s.dependency 'KochavaTrackeriOS'
-s.dependency 'AFNetworking/Reachability', '~> 3.0'
 s.dependency 'PullToRefreshSwift', '~> 3.0'
 s.dependency 'AFNetworking', '~> 3.1'
 end
