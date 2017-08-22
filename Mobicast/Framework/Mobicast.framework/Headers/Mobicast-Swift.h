@@ -535,13 +535,14 @@ SWIFT_CLASS("_TtC8Mobicast22ChannelsViewController")
 @property (nonatomic, strong) UITableView * _Null_unspecified tableView;
 /// Activity indicator view to show the process of loading data.
 @property (nonatomic, strong) UIActivityIndicatorView * _Null_unspecified activityIndicatorView;
+/// AdTag configuration for player
+@property (nonatomic, copy) NSDictionary<NSString *, id> * _Nullable configuration;
 /// channels array
 @property (nonatomic, copy) NSArray<ChannelItem *> * _Nullable channels;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
@@ -675,8 +676,6 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 /// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
 - (nonnull instancetype)initWithDiscoveryPlaylistWithPlayerToken:(NSString * _Nonnull)playerToken completionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
 /// Get DiscoveryPlaylistViewController.
-/// @param playerToken Player token.
-/// @param updateDataFromServerHandler Handler for call update data from server method with callback
 /// @param completionHandler Completion handler which returns DiscoveryPlaylistViewController instance
 - (nonnull instancetype)initWithDiscoveryPlaylistWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull, void (^ _Nonnull)(NSArray * _Nullable, NSString * _Nullable, NSDictionary<NSString *, id> * _Nullable)))completionHandler;
 @end
@@ -690,6 +689,9 @@ SWIFT_CLASS("_TtC8Mobicast17DiscoveryPlaylist")
 /// Show a new video list in a new window.
 /// @param playerToken Player token.
 - (nonnull instancetype)initWithShowInNewWindowWithPlayerToken:(NSString * _Nonnull)playerToken;
+/// Get DiscoveryPlaylistViewController.
+/// @param navigationController Navigation controller where the preview video list will be displayed.
+- (nonnull instancetype)initWithShowRecentPlaylistInNavigationController:(UINavigationController * _Nonnull)navigationController;
 /// Developer mode status. False by defalult.
 @property (nonatomic) BOOL isDeveloperMode;
 @end
@@ -1193,6 +1195,7 @@ SWIFT_CLASS("_TtC8Mobicast22PlayListViewController")
 @property (nonatomic, strong) UIActivityIndicatorView * _Null_unspecified activityIndicatorView;
 /// An array with a video movie data.
 @property (nonatomic, copy) NSArray<VideoItem *> * _Nonnull tableData;
+/// A player configuration (includes info about show advertizing, list shuffling, etc)
 @property (nonatomic, copy) NSDictionary<NSString *, id> * _Nullable configuration;
 @property (nonatomic, copy) NSString * _Nullable widgetId;
 @property (nonatomic, copy) NSString * _Nullable videoTag;

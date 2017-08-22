@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
-s.version          = '1.1.18'
+s.version          = '1.1.19'
 s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
@@ -38,7 +38,6 @@ s.frameworks = 'UIKit', 'AVFoundation'
 s.dependency 'GoogleAds-IMA-iOS-SDK', '3.5.2'
 s.dependency 'google-cast-sdk', '3.5.0'
 s.dependency 'KochavaTrackeriOS'
-s.dependency 'AFNetworking/Reachability', '~> 3.0'
 s.dependency 'PullToRefreshSwift', '~> 3.0'
 s.dependency 'AFNetworking', '~> 3.1'
 end
