@@ -19,9 +19,8 @@ PODS:
   - google-cast-sdk/Core (3.5.0)
   - GoogleAds-IMA-iOS-SDK (3.5.2)
   - KochavaTrackeriOS (3.2.1)
-  - Mobicast (1.1.18):
+  - Mobicast (1.1.19):
     - AFNetworking (~> 3.1)
-    - AFNetworking/Reachability (~> 3.0)
     - google-cast-sdk (= 3.5.0)
     - GoogleAds-IMA-iOS-SDK (= 3.5.2)
     - KochavaTrackeriOS
@@ -40,7 +39,7 @@ SPEC CHECKSUMS:
   google-cast-sdk: fc3728ead66150ac746e001ba03a44e4b10e359e
   GoogleAds-IMA-iOS-SDK: a0692ecc51d7c8816d5245edfb8a69c553cd84d4
   KochavaTrackeriOS: b3ac3ed18755f67b71a9a93a7f8f03a408305d5b
-  Mobicast: f0d7e1f097094194cb2fc925f79880f668e1bf49
+  Mobicast: d822e98338be4ea69640dcff58ae1029e5e88050
   PullToRefreshSwift: 0743b818072bfd7c9464addc2d1b987b131057ca
 
 PODFILE CHECKSUM: a0c43cf6984fc5ac7158281925d47c4131c18144
