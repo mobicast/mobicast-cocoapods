@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'Mobicast'
-s.version          = '1.1.19'
+s.version          = '1.1.20'
 s.summary          = 'Mobicast video player.'
 
 # This description is used to generate tags and improve search results.
@@ -40,4 +40,10 @@ s.dependency 'google-cast-sdk', '3.5.0'
 s.dependency 'KochavaTrackeriOS'
 s.dependency 'PullToRefreshSwift', '~> 3.0'
 s.dependency 'AFNetworking', '~> 3.1'
+s.dependency 'FBAudienceNetwork'
+
+s.prepare_command = <<-CMD
+find . -type f -name 'Pods-*.xcconfig' -exec sed -i '' -e 's/-framework "FBAudienceNetwork"//g' {} +
+CMD
+
 end
