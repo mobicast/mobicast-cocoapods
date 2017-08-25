@@ -134,6 +134,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
 @import Foundation;
+@import FBAudienceNetwork;
 @import UIKit;
 @import CoreGraphics;
 @import GoogleCast;
@@ -242,9 +243,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AirplayMirro
 @class UIViewController;
 @class ImaAdsManager;
 @class NSTimer;
+@class FBInstreamAdView;
 
 SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
-@interface VideoPlayerManager : NSObject
+@interface VideoPlayerManager : NSObject <FBInstreamAdViewDelegate, FBNativeAdDelegate>
 /// Block for playing the next video.
 @property (nonatomic, copy) void (^ _Nonnull playNextVideo)(void);
 /// Block for playing the previous video.
@@ -308,6 +310,8 @@ SWIFT_CLASS("_TtC8Mobicast18VideoPlayerManager")
 @property (nonatomic, strong) VideoPlayerManager * _Null_unspecified videoPlayer;
 /// Timer counter for play next video.
 @property (nonatomic) NSInteger timerCounterForPlayNextVideo;
+/// Timer counter for play next video.
+@property (nonatomic, strong) FBInstreamAdView * _Nullable facebookInstreamAdView;
 @property (nonatomic, strong) NSTimer * _Nullable thumbnailLoaderTimer;
 /// Change the appearance of the play/pause button.
 - (void)setupPlayPauseButtonStatus;
@@ -1393,16 +1397,16 @@ SWIFT_CLASS("_TtC8Mobicast12RichPlaylist")
 
 
 @interface RichPlaylist (SWIFT_EXTENSION(Mobicast))
-/// Show a new video list in a parent navigation controller.
-/// @param navigationController Navigation controller where the preview video list will be displayed.
-- (nonnull instancetype)initWithShowInNavigationController:(UINavigationController * _Nonnull)navigationController;
+/// Get RichPlaylistViewController.
+/// @param completionHandler Completion handler which returns RichPlaylistViewController instance
+- (nonnull instancetype)initWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
 @end
 
 
 @interface RichPlaylist (SWIFT_EXTENSION(Mobicast))
-/// Get RichPlaylistViewController.
-/// @param completionHandler Completion handler which returns RichPlaylistViewController instance
-- (nonnull instancetype)initWithCompletionHandler:(void (^ _Nonnull)(UIViewController * _Nonnull))completionHandler;
+/// Show a new video list in a parent navigation controller.
+/// @param navigationController Navigation controller where the preview video list will be displayed.
+- (nonnull instancetype)initWithShowInNavigationController:(UINavigationController * _Nonnull)navigationController;
 @end
 
 
@@ -1823,6 +1827,15 @@ SWIFT_CLASS("_TtC8Mobicast33VideoPlayerInfoPanelLandscapeMode")
 - (void)imaAdsManagerPauseVideo:(NSObject * _Nonnull)imaAdsManager;
 - (void)imaAdsManagerUserClick:(NSObject * _Nonnull)imaAdsManager;
 - (void)imaAdsManagerAdStarted:(NSObject * _Nonnull)imaAdsManager;
+@end
+
+
+@interface VideoPlayerManager (SWIFT_EXTENSION(Mobicast))
+- (void)adViewDidLoad:(FBInstreamAdView * _Nonnull)adView;
+- (void)adViewDidEnd:(FBInstreamAdView * _Nonnull)adView;
+- (void)adView:(FBInstreamAdView * _Nonnull)adView didFailWithError:(NSError * _Nonnull)error;
+- (void)adViewDidClick:(FBInstreamAdView * _Nonnull)adView;
+- (void)adViewWillLogImpression:(FBInstreamAdView * _Nonnull)adView;
 @end
 
 
