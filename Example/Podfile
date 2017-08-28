@@ -2,7 +2,10 @@ use_frameworks!
 
 target 'Mobicast_Example' do
   pod 'Mobicast', :path => '../'
-
+  post_install do |installer|
+      system("find 'Pods/Target Support Files' -type f -name 'Pods-*.xcconfig' -exec sed -i '' -e 's/-framework \"FBAudienceNetwork\"//g' {} +")
+  end
+  
   target 'Mobicast_Tests' do
     inherit! :search_paths
 
