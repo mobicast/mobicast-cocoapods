@@ -25,10 +25,13 @@ CocoaPods
 
 ### Installation Instructions
 
-Mobicast is available through CocoaPods (CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects - [http://cocoapods.org](http://cocoapods.org) for more details. To install the SDK, simply add the following line to your Podfile:
+Mobicast is available through CocoaPods (CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects - [http://cocoapods.org](http://cocoapods.org) for more details. To install the SDK, simply add the following linesto your Podfile:
 
 ```ruby
 pod "Mobicast"
+post_install do |installer|
+system("find 'Pods/Target Support Files' -type f -name 'Pods-*.xcconfig' -exec sed -i '' -e 's/-framework \"FBAudienceNetwork\"//g' {} +")
+end
 ```
 
 ### Usage

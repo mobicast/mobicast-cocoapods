@@ -42,8 +42,4 @@ s.dependency 'PullToRefreshSwift', '~> 3.0'
 s.dependency 'AFNetworking', '~> 3.1'
 s.dependency 'FBAudienceNetwork'
 
-s.prepare_command = <<-CMD
-find . -type f -name 'Pods-*.xcconfig' -exec sed -i '' -e 's/-framework "FBAudienceNetwork"//g' {} +
-CMD
-
 end
