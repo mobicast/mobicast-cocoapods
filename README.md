@@ -1,7 +1,7 @@
 # Mobicast
 
 ### Introduction
-Mobicast provides an iOS SDK that can very straightforwardly be plugged into an existing iOS mobile application to show popular video content alongside targeted advertising. The SDK makes use of the Mobicast API and fetches player configuration and video playlist details using exactly the same mechanism.  In the same way as the API, the Mobicast Account Team will provision a player token to use when configuring the SDK.
+Mocha provides an iOS SDK that can very straightforwardly be plugged into an existing iOS mobile application to show popular video content alongside targeted advertising. The SDK makes use of the Mocha API and fetches player configuration and video playlist details using exactly the same mechanism.  In the same way as the API, the Mobicast Account Team will provision a player token to use when configuring the SDK.
 
 ### Functionality
 Once implemented, a video marquee of content from the configured playlist is shown at the bottom of the view that initialises the SDK control:
@@ -15,7 +15,7 @@ Clicking on a video opens the video in play mode within a scrollable control tha
 Pre-roll and mid roll advertising is shown as configured for this player token.
 <img src="https://media-api.atlassian.io/file/23a46838-a1c4-4c7d-9f58-8d2cf6ede9d9/image?mode=full-fit&client=97cd3ed9-999a-4470-bc0f-e348dd28368c&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5N2NkM2VkOS05OTlhLTQ0NzAtYmMwZi1lMzQ4ZGQyODM2OGMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOjIzYTQ2ODM4LWExYzQtNGM3ZC05ZjU4LThkMmNmNmVkZTlkOSI6WyJyZWFkIl19LCJleHAiOjE1MDMwNDcyODQsIm5iZiI6MTUwMzA0MzkyNH0.30uKjnHtork9hkEXzci60zqOKOxJfFlpwAES4vmunLM" width="350">
 
-All of the runtime configuration for the SDK is loaded dynamically from the Mobicast management console, allowing playlists, content and ad integration to be updated at runtime.
+All of the runtime configuration for the SDK is loaded dynamically from the Mocha management console, allowing playlists, content and ad integration to be updated at runtime.
 
 ### Requirements
 
@@ -48,7 +48,7 @@ import Mobicast
 For correct work of the framework, you need to add `UIViewControllerBasedStatusBarAppearance` in your application's `Info.plist` and set it to Type: Boolean and Value: `NO`.
 
 ##### Discovery Widget
-To embed the Discovery Widget in your view controller, you just need to write the code below passing the player token that you have been given by the Mobicast Account Team:
+To embed the Discovery Widget in your view controller, you just need to write the code below passing the player token that you have been given by the Mocha Account Team:
 
 ```swift
 var discovery: DiscoveryWidget?
@@ -139,4 +139,4 @@ Like and Share tracking, as well as detailed video view information by unique de
 
 ### License
 
-The Mobicast IOS SDK is available under the MIT license (https://opensource.org/licenses/MIT). See the LICENSE file for more info.
+The Mocha IOS SDK is available under the MIT license (https://opensource.org/licenses/MIT). See the LICENSE file for more info.
